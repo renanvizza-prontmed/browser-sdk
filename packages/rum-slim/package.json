@@ -16,10 +16,10 @@
     "@openobserve/browser-core": "0.1.1"
   },
   "peerDependencies": {
-    "@datadog/browser-logs": "4.48.1"
+    "@openobserve/browser-logs": "0.1.1"
   },
   "peerDependenciesMeta": {
-    "@datadog/browser-logs": {
+    "@openobserve/browser-logs": {
       "optional": true
     }
   },
