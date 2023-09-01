@@ -16,10 +16,10 @@
     "@openobserve/browser-core": "0.1.1"
   },
   "peerDependencies": {
-    "@datadog/browser-rum": "4.48.1"
+    "@openobserve/browser-rum": "0.1.1"
   },
   "peerDependenciesMeta": {
-    "@datadog/browser-rum": {
+    "@openobserve/browser-rum": {
       "optional": true
     }
   },
