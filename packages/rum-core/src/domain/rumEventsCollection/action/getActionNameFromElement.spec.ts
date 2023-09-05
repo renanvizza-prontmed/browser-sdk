@@ -232,10 +232,10 @@ describe('getActionNameFromElement', () => {
   })
 
   describe('programmatically declared action name', () => {
-    it('extracts the name from the data-dd-action-name attribute', () => {
+    it('extracts the name from the data-oo-action-name attribute', () => {
       expect(
         getActionNameFromElement(isolatedDom.element`
-          <div data-dd-action-name="foo">ignored</div>
+          <div data-oo-action-name="foo">ignored</div>
         `)
       ).toBe('foo')
     })
@@ -249,14 +249,14 @@ describe('getActionNameFromElement', () => {
         </form>
       `
       // Set the attribute on the <HTML> element
-      target.ownerDocument.documentElement.setAttribute('data-dd-action-name', 'foo')
+      target.ownerDocument.documentElement.setAttribute('data-oo-action-name', 'foo')
       expect(getActionNameFromElement(target)).toBe('foo')
     })
 
     it('normalizes the value', () => {
       expect(
         getActionNameFromElement(isolatedDom.element`
-          <div data-dd-action-name="   foo  \t bar  ">ignored</div>
+          <div data-oo-action-name="   foo  \t bar  ">ignored</div>
         `)
       ).toBe('foo bar')
     })
@@ -264,8 +264,8 @@ describe('getActionNameFromElement', () => {
     it('fallback on an automatic strategy if the attribute is empty', () => {
       expect(
         getActionNameFromElement(isolatedDom.element`
-          <div data-dd-action-name="ignored">
-            <div data-dd-action-name="">
+          <div data-oo-action-name="ignored">
+            <div data-oo-action-name="">
               <span target>foo</span>
             </div>
           </div>
@@ -284,11 +284,11 @@ describe('getActionNameFromElement', () => {
       ).toBe('foo')
     })
 
-    it('favors data-dd-action-name over user-configured attribute', () => {
+    it('favors data-oo-action-name over user-configured attribute', () => {
       expect(
         getActionNameFromElement(
           isolatedDom.element`
-          <div data-test-id="foo" data-dd-action-name="bar">ignored</div>
+          <div data-test-id="foo" data-oo-action-name="bar">ignored</div>
         `,
           'data-test-id'
         )
@@ -297,7 +297,7 @@ describe('getActionNameFromElement', () => {
 
     it('remove children with programmatic action name in textual content', () => {
       expect(
-        getActionNameFromElement(isolatedDom.element`<div>Foo <div data-dd-action-name="custom action">bar<div></div>`)
+        getActionNameFromElement(isolatedDom.element`<div>Foo <div data-oo-action-name="custom action">bar<div></div>`)
       ).toBe('Foo')
     })
 

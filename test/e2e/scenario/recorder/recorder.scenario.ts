@@ -83,10 +83,10 @@ describe('recorder', () => {
       .withSetup(bundleSetup)
       .withBody(html`
         <div id="not-obfuscated">foo</div>
-        <p id="hidden-by-attribute" data-dd-privacy="hidden">bar</p>
-        <span id="hidden-by-classname" class="dd-privacy-hidden baz">baz</span>
-        <input id="input-ignored" data-dd-privacy="input-ignored" value="toto" />
-        <input id="input-masked" data-dd-privacy="input-masked" value="toto" />
+        <p id="hidden-by-attribute" data-oo-privacy="hidden">bar</p>
+        <span id="hidden-by-classname" class="oo-privacy-hidden baz">baz</span>
+        <input id="input-ignored" data-oo-privacy="input-ignored" value="toto" />
+        <input id="input-masked" data-oo-privacy="input-masked" value="toto" />
       `)
       .run(async ({ serverEvents }) => {
         await flushEvents()
@@ -101,14 +101,14 @@ describe('recorder', () => {
 
         const hiddenNodeByAttribute = findElement(fullSnapshot.data.node, (node) => node.tagName === 'p')
         expect(hiddenNodeByAttribute).toBeTruthy()
-        expect(hiddenNodeByAttribute!.attributes['data-dd-privacy']).toBe('hidden')
+        expect(hiddenNodeByAttribute!.attributes['data-oo-privacy']).toBe('hidden')
         expect(hiddenNodeByAttribute!.childNodes.length).toBe(0)
 
         const hiddenNodeByClassName = findElement(fullSnapshot.data.node, (node) => node.tagName === 'span')
 
         expect(hiddenNodeByClassName).toBeTruthy()
         expect(hiddenNodeByClassName!.attributes.class).toBeUndefined()
-        expect(hiddenNodeByClassName!.attributes['data-dd-privacy']).toBe('hidden')
+        expect(hiddenNodeByClassName!.attributes['data-oo-privacy']).toBe('hidden')
         expect(hiddenNodeByClassName!.childNodes.length).toBe(0)
 
         const inputIgnored = findElementWithIdAttribute(fullSnapshot.data.node, 'input-ignored')
@@ -266,7 +266,7 @@ describe('recorder', () => {
       .withRumInit(initRumAndStartRecording)
       .withSetup(bundleSetup)
       .withBody(html`
-        <div data-dd-privacy="hidden">
+        <div data-oo-privacy="hidden">
           <ul>
             <li></li>
           </ul>
@@ -530,7 +530,7 @@ describe('recorder', () => {
       .withSetup(bundleSetup)
       .withBody(html`
         <input type="text" id="first" name="first" />
-        <input type="text" id="second" name="second" data-dd-privacy="input-ignored" />
+        <input type="text" id="second" name="second" data-oo-privacy="input-ignored" />
         <input type="text" id="third" name="third" class="dd-privacy-input-ignored" />
         <input type="password" id="fourth" name="fourth" />
       `)
@@ -564,7 +564,7 @@ describe('recorder', () => {
       .withRumInit(initRumAndStartRecording)
       .withSetup(bundleSetup)
       .withBody(html`
-        <input type="text" id="by-data-attribute" data-dd-privacy="input-masked" />
+        <input type="text" id="by-data-attribute" data-oo-privacy="input-masked" />
         <input type="text" id="by-classname" class="dd-privacy-input-masked" />
       `)
       .run(async ({ serverEvents }) => {

@@ -599,7 +599,7 @@ describe('startMutationCollection', () => {
 
     it('respects the parent privacy level when emitting a text node mutation', () => {
       const wrapper = document.createElement('div')
-      wrapper.setAttribute('data-dd-privacy', 'allow')
+      wrapper.setAttribute('data-oo-privacy', 'allow')
       document.body.appendChild(wrapper)
 
       const div = document.createElement('div')
@@ -861,7 +861,7 @@ describe('startMutationCollection', () => {
     let hiddenElement: HTMLElement
     beforeEach(() => {
       hiddenElement = document.createElement('div')
-      hiddenElement.setAttribute('data-dd-privacy', 'hidden')
+      hiddenElement.setAttribute('data-oo-privacy', 'hidden')
       sandbox.appendChild(hiddenElement)
     })
 

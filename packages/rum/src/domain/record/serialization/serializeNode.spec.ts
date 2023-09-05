@@ -450,7 +450,7 @@ describe('serializeNodeWithId', () => {
         expect(serializeElement(radio)!.attributes).toEqual({
           type: 'radio',
           value: '***',
-          'data-dd-privacy': 'mask-user-input',
+          'data-oo-privacy': 'mask-user-input',
         })
 
         radio.checked = true
@@ -458,7 +458,7 @@ describe('serializeNodeWithId', () => {
         expect(serializeElement(radio)!.attributes).toEqual({
           type: 'radio',
           value: '***',
-          'data-dd-privacy': 'mask-user-input',
+          'data-oo-privacy': 'mask-user-input',
         })
       })
     })

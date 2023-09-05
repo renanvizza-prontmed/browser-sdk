@@ -21,7 +21,7 @@ describe('endpointBuilder', () => {
   describe('query parameters', () => {
     it('should add intake query parameters', () => {
       expect(createEndpointBuilder(initConfiguration, 'rum', []).build('xhr')).toMatch(
-        `&dd-api-key=${clientToken}&dd-evp-origin-version=(.*)&dd-evp-origin=browser&dd-request-id=(.*)`
+        `&oo-api-key=${clientToken}&oo-evp-origin-version=(.*)&oo-evp-origin=browser&oo-request-id=(.*)`
       )
     })
 
@@ -49,8 +49,8 @@ describe('endpointBuilder', () => {
         createEndpointBuilder({ ...initConfiguration, proxy: 'https://proxy.io/path' }, 'rum', []).build('xhr')
       ).toMatch(
         `https://proxy.io/path\\?ddforward=${encodeURIComponent(
-          `/api/v2/rum?ddsource=(.*)&ddtags=(.*)&dd-api-key=${clientToken}` +
-          '&dd-evp-origin-version=(.*)&dd-evp-origin=browser&dd-request-id=(.*)&batch_time=(.*)'
+          `/api/v2/rum?ddsource=(.*)&ddtags=(.*)&oo-api-key=${clientToken}` +
+          '&oo-evp-origin-version=(.*)&oo-evp-origin=browser&oo-request-id=(.*)&batch_time=(.*)'
         )}`
       )
     })
@@ -89,8 +89,8 @@ describe('endpointBuilder', () => {
         createEndpointBuilder({ ...initConfiguration, proxyUrl: 'https://proxy.io/path' }, 'rum', []).build('xhr')
       ).toMatch(
         `https://proxy.io/path\\?ddforward=${encodeURIComponent(
-          `https://api.openobserve.ai/api/v2/rum?ddsource=(.*)&ddtags=(.*)&dd-api-key=${clientToken}` +
-          '&dd-evp-origin-version=(.*)&dd-evp-origin=browser&dd-request-id=(.*)&batch_time=(.*)'
+          `https://api.openobserve.ai/api/v2/rum?ddsource=(.*)&ddtags=(.*)&oo-api-key=${clientToken}` +
+          '&oo-evp-origin-version=(.*)&oo-evp-origin=browser&oo-request-id=(.*)&batch_time=(.*)'
         )}`
       )
     })
