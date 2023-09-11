@@ -58,7 +58,7 @@ function createEndpointUrlWithParametersBuilder(
   initConfiguration: InitConfiguration,
   endpointType: EndpointType
 ): (parameters: string) => string {
-  const { proxy, proxyUrl, apiVersion, organizationIdentifier } = initConfiguration
+  const { proxy, proxyUrl, apiVersion, organizationIdentifier, insecureHTTP } = initConfiguration
 
   const path = `/rum/${apiVersion}/${organizationIdentifier}/${INTAKE_TRACKS[endpointType]}`
 
@@ -76,7 +76,9 @@ function createEndpointUrlWithParametersBuilder(
       `${normalizedProxyUrl}?ooforward=${encodeURIComponent(`https://${host}${path}?${parameters}`)}`
   }
 
-  return (parameters) => `https://${host}${path}?${parameters}`
+  const protocol = insecureHTTP ? 'http' : 'https'
+
+  return (parameters) => `${protocol}://${host}${path}?${parameters}`
 }
 
 function buildEndpointHost(initConfiguration: InitConfiguration, endpointType: EndpointType) {

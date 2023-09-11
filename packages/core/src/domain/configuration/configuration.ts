@@ -48,6 +48,7 @@ export interface InitConfiguration {
   version?: string | undefined
   apiVersion: string
   organizationIdentifier: string | undefined
+  insecureHTTP: boolean
 
   // cookie options
   useCrossSiteSessionCookie?: boolean | undefined
