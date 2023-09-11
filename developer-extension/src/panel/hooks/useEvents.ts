@@ -125,7 +125,7 @@ function listenEventsFromRequests(callback: (events: StoredEvent[]) => void) {
     if (!INTAKE_DOMAINS.find((rootDomain) => url.hostname.endsWith(rootDomain))) {
       return
     }
-    // intake request path is /api/vX/track
+    // intake request path is /rum/vX/track
     if (!['rum', 'logs'].includes(url.pathname.split('/')[3])) {
       return
     }

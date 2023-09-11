@@ -68,15 +68,15 @@ describe('transportConfiguration', () => {
       it(`should detect intake request for ${site} site`, () => {
         const configuration = computeTransportConfiguration({ clientToken, site })
 
-        expect(configuration.isIntakeUrl(`https://${intakeDomain}/api/v2/rum?xxx`)).toBe(expectSubdomain)
-        expect(configuration.isIntakeUrl(`https://${intakeDomain}/api/v2/logs?xxx`)).toBe(expectSubdomain)
-        expect(configuration.isIntakeUrl(`https://${intakeDomain}/api/v2/replay?xxx`)).toBe(
+        expect(configuration.isIntakeUrl(`https://${intakeDomain}/rum/v2/rum?xxx`)).toBe(expectSubdomain)
+        expect(configuration.isIntakeUrl(`https://${intakeDomain}/rum/v2/logs?xxx`)).toBe(expectSubdomain)
+        expect(configuration.isIntakeUrl(`https://${intakeDomain}/rum/v2/replay?xxx`)).toBe(
           expectSubdomain
         )
 
-        expect(configuration.isIntakeUrl(`https://${intakeDomain}/api/v2/rum?xxx`)).toBe(!expectSubdomain)
-        expect(configuration.isIntakeUrl(`https://${intakeDomain}/api/v2/logs?xxx`)).toBe(!expectSubdomain)
-        expect(configuration.isIntakeUrl(`https://${intakeDomain}/api/v2/replay?xxx`)).toBe(!expectSubdomain)
+        expect(configuration.isIntakeUrl(`https://${intakeDomain}/rum/v2/rum?xxx`)).toBe(!expectSubdomain)
+        expect(configuration.isIntakeUrl(`https://${intakeDomain}/rum/v2/logs?xxx`)).toBe(!expectSubdomain)
+        expect(configuration.isIntakeUrl(`https://${intakeDomain}/rum/v2/replay?xxx`)).toBe(!expectSubdomain)
       })
     })
 
@@ -85,7 +85,7 @@ describe('transportConfiguration', () => {
         clientToken,
         internalAnalyticsSubdomain,
       })
-      expect(configuration.isIntakeUrl(`https://api.openobserve.ai/api/v2/rum?xxx`)).toBe(true)
+      expect(configuration.isIntakeUrl(`https://api.openobserve.ai/rum/v2/rum?xxx`)).toBe(true)
     })
 
     it('should not detect non intake request', () => {
@@ -95,11 +95,11 @@ describe('transportConfiguration', () => {
       ;[
         {
           proxyConfigurationName: 'proxy' as const,
-          intakeUrl: '/api/v2/rum',
+          intakeUrl: '/rum/v2/rum',
         },
         {
           proxyConfigurationName: 'proxyUrl' as const,
-          intakeUrl: 'https://api.openobserve.ai/api/v2/rum',
+          intakeUrl: 'https://api.openobserve.ai/rum/v2/rum',
         },
       ].forEach(({ proxyConfigurationName, intakeUrl }) => {
         describe(`${proxyConfigurationName} configuration`, () => {
@@ -109,7 +109,7 @@ describe('transportConfiguration', () => {
               [proxyConfigurationName]: 'https://www.proxy.com',
             })
             expect(
-              configuration.isIntakeUrl(`https://www.proxy.com/?ddforward=${encodeURIComponent(`${intakeUrl}?foo=bar`)}`)
+              configuration.isIntakeUrl(`https://www.proxy.com/?ooforward=${encodeURIComponent(`${intakeUrl}?foo=bar`)}`)
             ).toBe(true)
 
             configuration = computeTransportConfiguration({
@@ -118,7 +118,7 @@ describe('transportConfiguration', () => {
             })
             expect(
               configuration.isIntakeUrl(
-                `https://www.proxy.com/custom/path?ddforward=${encodeURIComponent(`${intakeUrl}?foo=bar`)}`
+                `https://www.proxy.com/custom/path?ooforward=${encodeURIComponent(`${intakeUrl}?foo=bar`)}`
               )
             ).toBe(true)
           })
@@ -143,7 +143,7 @@ describe('transportConfiguration', () => {
             internalAnalyticsSubdomain,
           })
 
-          expect(configuration.isIntakeUrl(`https://api.openobserve.ai/api/v2/rum?xxx`)).toBe(
+          expect(configuration.isIntakeUrl(`https://api.openobserve.ai/rum/v2/rum?xxx`)).toBe(
             true
           )
         })

@@ -40,9 +40,9 @@ export function createIntakeServerApp(serverEvents: EventRegistry, bridgeEvents:
 function computeIntakeType(
   req: express.Request
 ): { isBridge: true; intakeType: 'logs' | 'rum' } | { isBridge: false; intakeType: IntakeType } {
-  const ddforward = req.query.ddforward as string | undefined
-  if (!ddforward) {
-    throw new Error('ddforward is missing')
+  const ooforward = req.query.ooforward as string | undefined
+  if (!ooforward) {
+    throw new Error('ooforward is missing')
   }
 
   if (req.query.bridge === 'true') {
@@ -54,8 +54,8 @@ function computeIntakeType(
   }
 
   let intakeType: IntakeType
-  // ddforward = /api/v2/rum?key=value
-  const endpoint = ddforward.split(/[/?]/)[3]
+  // ooforward = /rum/v2/rum?key=value
+  const endpoint = ooforward.split(/[/?]/)[3]
   if (endpoint === 'logs' || endpoint === 'rum') {
     intakeType = endpoint
   } else if (endpoint === 'replay' && req.busboy) {
@@ -134,9 +134,9 @@ function forwardReplayToIntake(req: express.Request): Promise<any> {
 }
 
 function prepareIntakeRequest(req: express.Request) {
-  const ddforward = req.query.ddforward! as string
-  if (!/^\/api\/v2\//.test(ddforward)) {
-    throw new Error(`Unsupported ddforward: ${ddforward}`)
+  const ooforward = req.query.ooforward! as string
+  if (!/^\/api\/v2\//.test(ooforward)) {
+    throw new Error(`Unsupported ooforward: ${ooforward}`)
   }
   const options = {
     method: 'POST',
@@ -146,7 +146,7 @@ function prepareIntakeRequest(req: express.Request) {
       'User-Agent': req.headers['user-agent'],
     },
   }
-  return https.request(new URL(ddforward, 'https://api.openobserve.ai'), options)
+  return https.request(new URL(ooforward, 'https://api.openobserve.ai'), options)
 }
 
 function readStream(stream: NodeJS.ReadableStream): Promise<Buffer> {

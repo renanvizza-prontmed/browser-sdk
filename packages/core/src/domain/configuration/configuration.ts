@@ -45,7 +45,8 @@ export interface InitConfiguration {
   // tag and context options
   service?: string | undefined
   env?: string | undefined
-  version?: string | undefined
+  version: string | undefined
+  organizationIdentifier: string | undefined
 
   // cookie options
   useCrossSiteSessionCookie?: boolean | undefined

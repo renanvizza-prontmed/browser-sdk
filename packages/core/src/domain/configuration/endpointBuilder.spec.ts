@@ -44,12 +44,12 @@ describe('endpointBuilder', () => {
   })
 
   describe('proxy configuration', () => {
-    it('should replace the intake endpoint by the proxy and set the intake path and parameters in the attribute ddforward', () => {
+    it('should replace the intake endpoint by the proxy and set the intake path and parameters in the attribute ooforward', () => {
       expect(
         createEndpointBuilder({ ...initConfiguration, proxy: 'https://proxy.io/path' }, 'rum', []).build('xhr')
       ).toMatch(
-        `https://proxy.io/path\\?ddforward=${encodeURIComponent(
-          `/api/v2/rum?oosource=(.*)&ddtags=(.*)&oo-api-key=${clientToken}` +
+        `https://proxy.io/path\\?ooforward=${encodeURIComponent(
+          `/rum/v2/xyz/rum?oosource=(.*)&ddtags=(.*)&oo-api-key=${clientToken}` +
           '&oo-evp-origin-version=(.*)&oo-evp-origin=browser&oo-request-id=(.*)&batch_time=(.*)'
         )}`
       )
@@ -59,7 +59,7 @@ describe('endpointBuilder', () => {
       expect(
         startsWith(
           createEndpointBuilder({ ...initConfiguration, proxy: '/path' }, 'rum', []).build('xhr'),
-          `${location.origin}/path?ddforward`
+          `${location.origin}/path?ooforward`
         )
       ).toBeTrue()
     })
@@ -84,12 +84,12 @@ describe('endpointBuilder', () => {
   })
 
   describe('deprecated proxyUrl configuration', () => {
-    it('should replace the full intake endpoint by the proxyUrl and set it in the attribute ddforward', () => {
+    it('should replace the full intake endpoint by the proxyUrl and set it in the attribute ooforward', () => {
       expect(
         createEndpointBuilder({ ...initConfiguration, proxyUrl: 'https://proxy.io/path' }, 'rum', []).build('xhr')
       ).toMatch(
-        `https://proxy.io/path\\?ddforward=${encodeURIComponent(
-          `https://api.openobserve.ai/api/v2/rum?oosource=(.*)&ddtags=(.*)&oo-api-key=${clientToken}` +
+        `https://proxy.io/path\\?ooforward=${encodeURIComponent(
+          `https://api.openobserve.ai/rum/v2/xyz/rum?oosource=(.*)&ddtags=(.*)&oo-api-key=${clientToken}` +
           '&oo-evp-origin-version=(.*)&oo-evp-origin=browser&oo-request-id=(.*)&batch_time=(.*)'
         )}`
       )
@@ -99,7 +99,7 @@ describe('endpointBuilder', () => {
       expect(
         startsWith(
           createEndpointBuilder({ ...initConfiguration, proxyUrl: '/path' }, 'rum', []).build('xhr'),
-          `${location.origin}/path?ddforward`
+          `${location.origin}/path?ooforward`
         )
       ).toBeTrue()
     })

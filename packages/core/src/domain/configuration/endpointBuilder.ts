@@ -58,12 +58,13 @@ function createEndpointUrlWithParametersBuilder(
   initConfiguration: InitConfiguration,
   endpointType: EndpointType
 ): (parameters: string) => string {
-  const path = `/api/v2/${INTAKE_TRACKS[endpointType]}`
+  const { proxy, proxyUrl, version, organizationIdentifier } = initConfiguration
 
-  const { proxy, proxyUrl } = initConfiguration
+  const path = `/rum/${version}/${organizationIdentifier}/${INTAKE_TRACKS[endpointType]}`
+
   if (proxy) {
     const normalizedProxyUrl = normalizeUrl(proxy)
-    return (parameters) => `${normalizedProxyUrl}?ddforward=${encodeURIComponent(`${path}?${parameters}`)}`
+    return (parameters) => `${normalizedProxyUrl}?ooforward=${encodeURIComponent(`${path}?${parameters}`)}`
   }
 
   const host = buildEndpointHost(initConfiguration, endpointType)
@@ -72,7 +73,7 @@ function createEndpointUrlWithParametersBuilder(
     // TODO: remove this in a future major.
     const normalizedProxyUrl = normalizeUrl(proxyUrl)
     return (parameters) =>
-      `${normalizedProxyUrl}?ddforward=${encodeURIComponent(`https://${host}${path}?${parameters}`)}`
+      `${normalizedProxyUrl}?ooforward=${encodeURIComponent(`https://${host}${path}?${parameters}`)}`
   }
 
   return (parameters) => `https://${host}${path}?${parameters}`
