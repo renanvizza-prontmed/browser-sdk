@@ -58,9 +58,9 @@ function createEndpointUrlWithParametersBuilder(
   initConfiguration: InitConfiguration,
   endpointType: EndpointType
 ): (parameters: string) => string {
-  const { proxy, proxyUrl, version, organizationIdentifier } = initConfiguration
+  const { proxy, proxyUrl, apiVersion, organizationIdentifier } = initConfiguration
 
-  const path = `/rum/${version}/${organizationIdentifier}/${INTAKE_TRACKS[endpointType]}`
+  const path = `/rum/${apiVersion}/${organizationIdentifier}/${INTAKE_TRACKS[endpointType]}`
 
   if (proxy) {
     const normalizedProxyUrl = normalizeUrl(proxy)
