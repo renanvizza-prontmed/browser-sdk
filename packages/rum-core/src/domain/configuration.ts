@@ -86,8 +86,6 @@ export interface RumConfiguration extends Configuration {
   trackLongTasks: boolean | undefined
   version?: string
   subdomain?: string
-  apiVersion: string
-  organizationIdentifier: string
   customerDataTelemetrySampleRate: number
 }
 
@@ -164,9 +162,6 @@ export function validateAndBuildRumConfiguration(
         ? initConfiguration.defaultPrivacyLevel
         : DefaultPrivacyLevel.MASK_USER_INPUT,
       customerDataTelemetrySampleRate: 1,
-      apiVersion: initConfiguration.apiVersion ?? 'v1',
-      organizationIdentifier: initConfiguration.organizationIdentifier,
-      insecureHTTP: initConfiguration.insecureHTTP,
     },
     baseConfiguration
   )
