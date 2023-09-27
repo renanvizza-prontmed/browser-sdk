@@ -191,7 +191,7 @@ function validateAndBuildTracingOptions(initConfiguration: RumInitConfiguration)
     const tracingOptions: TracingOption[] = []
     initConfiguration.allowedTracingUrls.forEach((option) => {
       if (isMatchOption(option)) {
-        tracingOptions.push({ match: option, propagatorTypes: ['openobserve'] })
+        tracingOptions.push({ match: option, propagatorTypes: ['tracecontext'] })
       } else if (isTracingOption(option)) {
         tracingOptions.push(option)
       } else {
@@ -248,12 +248,12 @@ function convertLegacyMatchOptionToTracingOption(item: MatchOption): TracingOpti
     return undefined
   }
 
-  return { match, propagatorTypes: ['openobserve'] }
+  return { match, propagatorTypes: ['tracecontext'] }
 }
 
 /**
  * Combines the selected tracing propagators from the different options in allowedTracingUrls,
- * and assumes 'openobserve' has been selected when using allowedTracingOrigins
+ * and assumes 'tracecontext' has been selected when using allowedTracingOrigins
  */
 function getSelectedTracingPropagators(configuration: RumInitConfiguration): PropagatorType[] {
   const usedTracingPropagators = new Set<PropagatorType>()
@@ -261,7 +261,7 @@ function getSelectedTracingPropagators(configuration: RumInitConfiguration): Pro
   if (Array.isArray(configuration.allowedTracingUrls) && configuration.allowedTracingUrls.length > 0) {
     configuration.allowedTracingUrls.forEach((option) => {
       if (isMatchOption(option)) {
-        usedTracingPropagators.add('openobserve')
+        usedTracingPropagators.add('tracecontext')
       } else if (getType(option) === 'object' && Array.isArray(option.propagatorTypes)) {
         // Ensure we have an array, as we cannot rely on types yet (configuration is provided by users)
         option.propagatorTypes.forEach((propagatorType) => usedTracingPropagators.add(propagatorType))
@@ -270,7 +270,7 @@ function getSelectedTracingPropagators(configuration: RumInitConfiguration): Pro
   }
 
   if (Array.isArray(configuration.allowedTracingOrigins) && configuration.allowedTracingOrigins.length > 0) {
-    usedTracingPropagators.add('openobserve')
+    usedTracingPropagators.add('tracecontext')
   }
 
   return arrayFrom(usedTracingPropagators)
