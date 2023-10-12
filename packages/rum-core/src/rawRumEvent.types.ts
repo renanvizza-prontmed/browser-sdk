@@ -233,7 +233,6 @@ export interface RumContext {
     id: string
     type: string
     has_replay?: boolean
-    start_time?: number | undefined
   }
   display?: {
     viewport: {
