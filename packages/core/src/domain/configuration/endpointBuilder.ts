@@ -84,7 +84,7 @@ function createEndpointUrlWithParametersBuilder(
 function buildEndpointHost(initConfiguration: InitConfiguration, endpointType: EndpointType) {
   const { site = INTAKE_SITE_US1, internalAnalyticsSubdomain } = initConfiguration
 
-  return site;
+  return site
   if (internalAnalyticsSubdomain && site === INTAKE_SITE_US1) {
     return `${internalAnalyticsSubdomain}.${INTAKE_SITE_US1}`
   }
@@ -115,12 +115,12 @@ function buildEndpointParameters(
     tags.push(`retry_count:${retry.count}`, `retry_after:${retry.lastFailureStatus}`)
   }
   const parameters = [
-    'oosource=browser',
-    `ootags=${encodeURIComponent(tags.join(','))}`,
-    `oo-api-key=${clientToken}`,
-    `oo-evp-origin-version=${encodeURIComponent(__BUILD_ENV__SDK_VERSION__)}`,
-    'oo-evp-origin=browser',
-    `oo-request-id=${generateUUID()}`,
+    'o2source=browser',
+    `o2tags=${encodeURIComponent(tags.join(','))}`,
+    `o2-api-key=${clientToken}`,
+    `o2-evp-origin-version=${encodeURIComponent(__BUILD_ENV__SDK_VERSION__)}`,
+    'o2-evp-origin=browser',
+    `o2-request-id=${generateUUID()}`,
   ]
 
   if (endpointType === 'rum') {
