@@ -1,5 +1,5 @@
-import type { Context, PageExitEvent, RawError, RelativeTime } from '@openobserve/browser-core'
-import { AbstractLifeCycle } from '@openobserve/browser-core'
+import type { Context, PageExitEvent, RawError, RelativeTime } from '@renanvizza-prontmed/browser-core'
+import { AbstractLifeCycle } from '@renanvizza-prontmed/browser-core'
 import type { RumPerformanceEntry } from '../browser/performanceCollection'
 import type { RumEventDomainContext } from '../domainContext.types'
 import type { RawRumEvent } from '../rawRumEvent.types'

@@ -1,4 +1,4 @@
-import { monitor, noop, Observable, getZoneJsOriginalValue } from '@openobserve/browser-core'
+import { monitor, noop, Observable, getZoneJsOriginalValue } from '@renanvizza-prontmed/browser-core'
 
 export function createDOMMutationObservable() {
   const MutationObserver = getMutationObserverConstructor()

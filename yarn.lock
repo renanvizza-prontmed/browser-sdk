@@ -1083,72 +1083,72 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openobserve/browser-core@0.3.0, @openobserve/browser-core@workspace:packages/core":
+"@renanvizza-prontmed/browser-core@0.3.0, @renanvizza-prontmed/browser-core@workspace:packages/core":
   version: 0.0.0-use.local
-  resolution: "@openobserve/browser-core@workspace:packages/core"
+  resolution: "@renanvizza-prontmed/browser-core@workspace:packages/core"
   languageName: unknown
   linkType: soft
 
-"@openobserve/browser-logs@workspace:*, @openobserve/browser-logs@workspace:packages/logs":
+"@renanvizza-prontmed/browser-logs@workspace:*, @renanvizza-prontmed/browser-logs@workspace:packages/logs":
   version: 0.0.0-use.local
-  resolution: "@openobserve/browser-logs@workspace:packages/logs"
+  resolution: "@renanvizza-prontmed/browser-logs@workspace:packages/logs"
   dependencies:
-    "@openobserve/browser-core": 0.3.0
+    "@renanvizza-prontmed/browser-core": 0.3.0
   peerDependencies:
-    "@openobserve/browser-rum": 5.4.0
+    "@renanvizza-prontmed/browser-rum": 5.4.0
   peerDependenciesMeta:
-    "@openobserve/browser-rum":
+    "@renanvizza-prontmed/browser-rum":
       optional: true
   languageName: unknown
   linkType: soft
 
-"@openobserve/browser-rum-core@0.3.0, @openobserve/browser-rum-core@workspace:packages/rum-core":
+"@renanvizza-prontmed/browser-rum-core@0.3.0, @renanvizza-prontmed/browser-rum-core@workspace:packages/rum-core":
   version: 0.0.0-use.local
-  resolution: "@openobserve/browser-rum-core@workspace:packages/rum-core"
+  resolution: "@renanvizza-prontmed/browser-rum-core@workspace:packages/rum-core"
   dependencies:
-    "@openobserve/browser-core": 0.3.0
+    "@renanvizza-prontmed/browser-core": 0.3.0
     ajv: 6.12.6
   languageName: unknown
   linkType: soft
 
-"@openobserve/browser-rum-slim@workspace:packages/rum-slim":
+"@renanvizza-prontmed/browser-rum-slim@workspace:packages/rum-slim":
   version: 0.0.0-use.local
-  resolution: "@openobserve/browser-rum-slim@workspace:packages/rum-slim"
+  resolution: "@renanvizza-prontmed/browser-rum-slim@workspace:packages/rum-slim"
   dependencies:
-    "@openobserve/browser-core": 0.3.0
-    "@openobserve/browser-rum-core": 0.3.0
+    "@renanvizza-prontmed/browser-core": 0.3.0
+    "@renanvizza-prontmed/browser-rum-core": 0.3.0
   peerDependencies:
-    "@openobserve/browser-logs": 0.3.0
+    "@renanvizza-prontmed/browser-logs": 0.3.0
   peerDependenciesMeta:
-    "@openobserve/browser-logs":
+    "@renanvizza-prontmed/browser-logs":
       optional: true
   languageName: unknown
   linkType: soft
 
-"@openobserve/browser-rum@workspace:*, @openobserve/browser-rum@workspace:packages/rum":
+"@renanvizza-prontmed/browser-rum@workspace:*, @renanvizza-prontmed/browser-rum@workspace:packages/rum":
   version: 0.0.0-use.local
-  resolution: "@openobserve/browser-rum@workspace:packages/rum"
+  resolution: "@renanvizza-prontmed/browser-rum@workspace:packages/rum"
   dependencies:
-    "@openobserve/browser-core": 0.3.0
-    "@openobserve/browser-rum-core": 0.3.0
+    "@renanvizza-prontmed/browser-core": 0.3.0
+    "@renanvizza-prontmed/browser-rum-core": 0.3.0
     "@types/pako": 2.0.3
     pako: 2.1.0
   peerDependencies:
-    "@openobserve/browser-logs": 0.3.0
+    "@renanvizza-prontmed/browser-logs": 0.3.0
   peerDependenciesMeta:
-    "@openobserve/browser-logs":
+    "@renanvizza-prontmed/browser-logs":
       optional: true
   languageName: unknown
   linkType: soft
 
-"@openobserve/browser-sdk-developer-extension@workspace:developer-extension":
+"@renanvizza-prontmed/browser-sdk-developer-extension@workspace:developer-extension":
   version: 0.0.0-use.local
-  resolution: "@openobserve/browser-sdk-developer-extension@workspace:developer-extension"
+  resolution: "@renanvizza-prontmed/browser-sdk-developer-extension@workspace:developer-extension"
   dependencies:
     "@mantine/core": 7.2.2
     "@mantine/hooks": 7.2.2
-    "@openobserve/browser-logs": "workspace:*"
-    "@openobserve/browser-rum": "workspace:*"
+    "@renanvizza-prontmed/browser-logs": "workspace:*"
+    "@renanvizza-prontmed/browser-rum": "workspace:*"
     "@types/chrome": 0.0.251
     "@types/react": 18.2.37
     "@types/react-dom": 18.2.15
@@ -1164,11 +1164,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@openobserve/browser-worker@workspace:packages/worker":
+"@renanvizza-prontmed/browser-worker@workspace:packages/worker":
   version: 0.0.0-use.local
-  resolution: "@openobserve/browser-worker@workspace:packages/worker"
+  resolution: "@renanvizza-prontmed/browser-worker@workspace:packages/worker"
   dependencies:
-    "@openobserve/browser-core": 0.3.0
+    "@renanvizza-prontmed/browser-core": 0.3.0
     webpack: 5.89.0
   languageName: unknown
   linkType: soft

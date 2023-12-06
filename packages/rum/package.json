@@ -1,5 +1,5 @@
 {
-  "name": "@openobserve/browser-rum",
+  "name": "@renanvizza-prontmed/browser-rum",
   "version": "0.3.0",
   "license": "Apache-2.0",
   "main": "cjs/entries/main.js",
@@ -13,14 +13,14 @@
     "replace-build-env": "node ../../scripts/build/replace-build-env.js"
   },
   "dependencies": {
-    "@openobserve/browser-core": "0.3.0",
-    "@openobserve/browser-rum-core": "0.3.0"
+    "@renanvizza-prontmed/browser-core": "0.3.0",
+    "@renanvizza-prontmed/browser-rum-core": "0.3.0"
   },
   "peerDependencies": {
-    "@openobserve/browser-logs": "0.3.0"
+    "@renanvizza-prontmed/browser-logs": "0.3.0"
   },
   "peerDependenciesMeta": {
-    "@openobserve/browser-logs": {
+    "@renanvizza-prontmed/browser-logs": {
       "optional": true
     }
   },

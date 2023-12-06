@@ -1,4 +1,4 @@
-import { ErrorSource, noop, objectEntries } from '@openobserve/browser-core'
+import { ErrorSource, noop, objectEntries } from '@renanvizza-prontmed/browser-core'
 import type { RawConsoleLogsEvent } from '../../rawLogsEvent.types'
 import { validateAndBuildLogsConfiguration } from '../configuration'
 import type { RawLogsEventCollectedData } from '../lifeCycle'

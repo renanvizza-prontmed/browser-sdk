@@ -1,5 +1,5 @@
-import type { Duration } from '@openobserve/browser-core'
-import { relativeNow } from '@openobserve/browser-core'
+import type { Duration } from '@renanvizza-prontmed/browser-core'
+import { relativeNow } from '@renanvizza-prontmed/browser-core'
 import { RumPerformanceEntryType } from '../../../browser/performanceCollection'
 import type { LifeCycle } from '../../lifeCycle'
 import { LifeCycleEventType } from '../../lifeCycle'

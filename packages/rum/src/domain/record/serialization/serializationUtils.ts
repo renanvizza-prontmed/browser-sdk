@@ -1,5 +1,5 @@
-import { buildUrl } from '@openobserve/browser-core'
-import { getParentNode, isNodeShadowRoot } from '@openobserve/browser-rum-core'
+import { buildUrl } from '@renanvizza-prontmed/browser-core'
+import { getParentNode, isNodeShadowRoot } from '@renanvizza-prontmed/browser-rum-core'
 import type { NodePrivacyLevel } from '../../../constants'
 import { CENSORED_STRING_MARK } from '../../../constants'
 import { shouldMaskNode } from '../privacy'

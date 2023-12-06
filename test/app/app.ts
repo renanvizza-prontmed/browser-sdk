@@ -1,5 +1,5 @@
-import { openobserveLogs } from '@openobserve/browser-logs'
-import { openobserveRum } from '@openobserve/browser-rum'
+import { openobserveLogs } from '@renanvizza-prontmed/browser-logs'
+import { openobserveRum } from '@renanvizza-prontmed/browser-rum'
 
 declare global {
   interface Window {

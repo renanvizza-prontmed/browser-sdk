@@ -1,4 +1,4 @@
-import type { Context, Duration, RelativeTime } from '@openobserve/browser-core'
+import type { Context, Duration, RelativeTime } from '@renanvizza-prontmed/browser-core'
 import {
   PageExitReason,
   timeStampNow,
@@ -6,7 +6,7 @@ import {
   relativeToClocks,
   relativeNow,
   resetExperimentalFeatures,
-} from '@openobserve/browser-core'
+} from '@renanvizza-prontmed/browser-core'
 import type { TestSetupBuilder } from '../../../test'
 import { createPerformanceEntry, setup } from '../../../test'
 import { RumEventType, ViewLoadingType } from '../../rawRumEvent.types'

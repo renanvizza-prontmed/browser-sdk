@@ -1,5 +1,5 @@
 {
-  "name": "@openobserve/browser-rum-slim",
+  "name": "@renanvizza-prontmed/browser-rum-slim",
   "version": "5.4.0",
   "license": "Apache-2.0",
   "main": "cjs/entries/main.js",
@@ -12,14 +12,14 @@
     "build:esm": "rm -rf esm && tsc -p tsconfig.esm.json"
   },
   "dependencies": {
-    "@openobserve/browser-core": "0.3.0",
-    "@openobserve/browser-rum-core": "0.3.0"
+    "@renanvizza-prontmed/browser-core": "0.3.0",
+    "@renanvizza-prontmed/browser-rum-core": "0.3.0"
   },
   "peerDependencies": {
-    "@openobserve/browser-logs": "0.3.0"
+    "@renanvizza-prontmed/browser-logs": "0.3.0"
   },
   "peerDependenciesMeta": {
-    "@openobserve/browser-logs": {
+    "@renanvizza-prontmed/browser-logs": {
       "optional": true
     }
   },

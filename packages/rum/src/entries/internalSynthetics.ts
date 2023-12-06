@@ -5,12 +5,12 @@
  * WARNING: this module is not intended for public usages, and won't follow semver for breaking
  * changes.
  */
-import { makeRumPublicApi, startRum } from '@openobserve/browser-rum-core'
+import { makeRumPublicApi, startRum } from '@renanvizza-prontmed/browser-rum-core'
 
 import { startRecording } from '../boot/startRecording'
 import { makeRecorderApi } from '../boot/recorderApi'
 
-export { DefaultPrivacyLevel } from '@openobserve/browser-core'
+export { DefaultPrivacyLevel } from '@renanvizza-prontmed/browser-core'
 
 // Disable the rule that forbids potential side effects, because we know that those functions don't
 // have side effects.

@@ -1,5 +1,5 @@
-import type { Context, Observable, PageExitEvent, RawError } from '@openobserve/browser-core'
-import { createIdentityEncoder, startBatchWithReplica } from '@openobserve/browser-core'
+import type { Context, Observable, PageExitEvent, RawError } from '@renanvizza-prontmed/browser-core'
+import { createIdentityEncoder, startBatchWithReplica } from '@renanvizza-prontmed/browser-core'
 import type { LogsConfiguration } from '../domain/configuration'
 import type { LifeCycle } from '../domain/lifeCycle'
 import { LifeCycleEventType } from '../domain/lifeCycle'

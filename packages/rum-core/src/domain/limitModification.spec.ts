@@ -1,5 +1,5 @@
-import type { Context } from '@openobserve/browser-core'
-import { objectEntries } from '@openobserve/browser-core'
+import type { Context } from '@renanvizza-prontmed/browser-core'
+import { objectEntries } from '@renanvizza-prontmed/browser-core'
 import type { ModifiableFieldPaths } from './limitModification'
 import { limitModification } from './limitModification'
 

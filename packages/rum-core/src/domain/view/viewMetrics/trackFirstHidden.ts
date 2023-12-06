@@ -1,5 +1,5 @@
-import type { RelativeTime } from '@openobserve/browser-core'
-import { addEventListeners, DOM_EVENT } from '@openobserve/browser-core'
+import type { RelativeTime } from '@renanvizza-prontmed/browser-core'
+import { addEventListeners, DOM_EVENT } from '@renanvizza-prontmed/browser-core'
 import type { RumConfiguration } from '../../configuration'
 
 export type FirstHidden = ReturnType<typeof trackFirstHidden>

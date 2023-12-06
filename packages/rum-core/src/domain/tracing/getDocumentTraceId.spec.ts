@@ -1,4 +1,4 @@
-import type { TimeStamp } from '@openobserve/browser-core'
+import type { TimeStamp } from '@renanvizza-prontmed/browser-core'
 import {
   createDocumentTraceData,
   findTraceComment,

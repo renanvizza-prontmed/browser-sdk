@@ -1,6 +1,6 @@
-import type { DeflateWorker, DeflateWorkerResponse } from '@openobserve/browser-core'
-import { addTelemetryError, display, includes, addEventListener, setTimeout, ONE_SECOND } from '@openobserve/browser-core'
-import type { RumConfiguration } from '@openobserve/browser-rum-core'
+import type { DeflateWorker, DeflateWorkerResponse } from '@renanvizza-prontmed/browser-core'
+import { addTelemetryError, display, includes, addEventListener, setTimeout, ONE_SECOND } from '@renanvizza-prontmed/browser-core'
+import type { RumConfiguration } from '@renanvizza-prontmed/browser-rum-core'
 
 export const INITIALIZATION_TIME_OUT_DELAY = 10 * ONE_SECOND
 

@@ -1,4 +1,4 @@
-import type { TimeStamp, HttpRequest, ClocksState } from '@openobserve/browser-core'
+import type { TimeStamp, HttpRequest, ClocksState } from '@renanvizza-prontmed/browser-core'
 import {
   PageExitReason,
   DefaultPrivacyLevel,
@@ -6,11 +6,11 @@ import {
   isIE,
   timeStampNow,
   DeflateEncoderStreamId,
-} from '@openobserve/browser-core'
-import type { LifeCycle, ViewCreatedEvent, RumConfiguration } from '@openobserve/browser-rum-core'
-import { LifeCycleEventType } from '@openobserve/browser-rum-core'
-import type { Clock } from '@openobserve/browser-core/test'
-import { collectAsyncCalls, createNewEvent, mockClock } from '@openobserve/browser-core/test'
+} from '@renanvizza-prontmed/browser-core'
+import type { LifeCycle, ViewCreatedEvent, RumConfiguration } from '@renanvizza-prontmed/browser-rum-core'
+import { LifeCycleEventType } from '@renanvizza-prontmed/browser-rum-core'
+import type { Clock } from '@renanvizza-prontmed/browser-core/test'
+import { collectAsyncCalls, createNewEvent, mockClock } from '@renanvizza-prontmed/browser-core/test'
 import type { RumSessionManagerMock, TestSetupBuilder } from '../../../rum-core/test'
 import { appendElement, createRumSessionManagerMock, setup } from '../../../rum-core/test'
 

@@ -7,7 +7,7 @@ import type {
   DeflateWorker,
   DeflateEncoderStreamId,
   DeflateEncoder,
-} from '@openobserve/browser-core'
+} from '@renanvizza-prontmed/browser-core'
 import {
   noop,
   CustomerDataType,
@@ -30,7 +30,7 @@ import {
   createStoredContextManager,
   combine,
   createIdentityEncoder,
-} from '@openobserve/browser-core'
+} from '@renanvizza-prontmed/browser-core'
 import type { LifeCycle } from '../domain/lifeCycle'
 import type { ViewContexts } from '../domain/contexts/viewContexts'
 import type { RumSessionManager } from '../domain/rumSessionManager'

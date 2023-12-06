@@ -1,4 +1,4 @@
-import { collectAsyncCalls } from '@openobserve/browser-core/test'
+import { collectAsyncCalls } from '@renanvizza-prontmed/browser-core/test'
 import { createMutationBatch } from './mutationBatch'
 import type { RumMutationRecord } from './observers'
 

@@ -1,4 +1,4 @@
-import { display } from '@openobserve/browser-core'
+import { display } from '@renanvizza-prontmed/browser-core'
 import { validateAndBuildForwardOption, validateAndBuildLogsConfiguration } from './configuration'
 
 const DEFAULT_INIT_CONFIGURATION = { clientToken: 'xxx' }

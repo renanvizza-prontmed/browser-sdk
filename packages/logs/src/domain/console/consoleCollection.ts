@@ -1,5 +1,5 @@
-import type { Context, ClocksState, ConsoleLog } from '@openobserve/browser-core'
-import { timeStampNow, ConsoleApiName, ErrorSource, initConsoleObservable } from '@openobserve/browser-core'
+import type { Context, ClocksState, ConsoleLog } from '@renanvizza-prontmed/browser-core'
+import { timeStampNow, ConsoleApiName, ErrorSource, initConsoleObservable } from '@renanvizza-prontmed/browser-core'
 import type { LogsConfiguration } from '../configuration'
 import type { LifeCycle } from '../lifeCycle'
 import { LifeCycleEventType } from '../lifeCycle'

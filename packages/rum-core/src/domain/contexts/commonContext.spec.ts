@@ -1,5 +1,5 @@
-import type { Context, ContextManager } from '@openobserve/browser-core'
-import { createContextManager, CustomerDataType } from '@openobserve/browser-core'
+import type { Context, ContextManager } from '@renanvizza-prontmed/browser-core'
+import { createContextManager, CustomerDataType } from '@renanvizza-prontmed/browser-core'
 import type { RecorderApi } from '../../boot/rumPublicApi'
 import { noopRecorderApi } from '../../../test'
 import type { CommonContext } from './commonContext'

@@ -1,5 +1,5 @@
-import type { RelativeTime, ClocksState } from '@openobserve/browser-core'
-import { SESSION_TIME_OUT_DELAY, ValueHistory } from '@openobserve/browser-core'
+import type { RelativeTime, ClocksState } from '@renanvizza-prontmed/browser-core'
+import { SESSION_TIME_OUT_DELAY, ValueHistory } from '@renanvizza-prontmed/browser-core'
 import type { LifeCycle } from '../lifeCycle'
 import { LifeCycleEventType } from '../lifeCycle'
 import type { ViewCreatedEvent } from '../view/trackViews'

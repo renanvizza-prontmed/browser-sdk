@@ -9,7 +9,7 @@ See the [dedicated datadog documentation][1] for more details.
 After adding [`@datadog/browser-logs`][2] to your `package.json` file, initialize it with:
 
 ```javascript
-import { openobserveLogs } from '@openobserve/browser-logs'
+import { openobserveLogs } from '@renanvizza-prontmed/browser-logs'
 
 openobserveLogs.init({
   clientToken: '<DATADOG_CLIENT_TOKEN>',
@@ -22,7 +22,7 @@ openobserveLogs.init({
 After the Datadog browser logs SDK is initialized, send custom log entries directly to Datadog:
 
 ```javascript
-import { openobserveLogs } from '@openobserve/browser-logs'
+import { openobserveLogs } from '@renanvizza-prontmed/browser-logs'
 
 openobserveLogs.logger.info('Button clicked', { name: 'buttonName', id: 123 })
 

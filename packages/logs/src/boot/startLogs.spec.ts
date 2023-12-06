@@ -1,6 +1,6 @@
-import type { Payload } from '@openobserve/browser-core'
-import { ErrorSource, display, stopSessionManager, getCookie, SESSION_STORE_KEY } from '@openobserve/browser-core'
-import type { Request } from '@openobserve/browser-core/test'
+import type { Payload } from '@renanvizza-prontmed/browser-core'
+import { ErrorSource, display, stopSessionManager, getCookie, SESSION_STORE_KEY } from '@renanvizza-prontmed/browser-core'
+import type { Request } from '@renanvizza-prontmed/browser-core/test'
 import {
   interceptRequests,
   stubEndpointBuilder,
@@ -9,7 +9,7 @@ import {
   cleanupSyntheticsWorkerValues,
   mockSyntheticsWorkerValues,
   registerCleanupTask,
-} from '@openobserve/browser-core/test'
+} from '@renanvizza-prontmed/browser-core/test'
 
 import type { LogsConfiguration } from '../domain/configuration'
 import { validateAndBuildLogsConfiguration } from '../domain/configuration'

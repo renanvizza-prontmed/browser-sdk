@@ -1,4 +1,4 @@
-import { isIE } from '@openobserve/browser-core'
+import { isIE } from '@renanvizza-prontmed/browser-core'
 import { appendElement, appendText } from '../../test'
 import {
   isTextNode,

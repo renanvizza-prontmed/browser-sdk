@@ -1,4 +1,4 @@
-import { cssEscape } from '@openobserve/browser-core'
+import { cssEscape } from '@renanvizza-prontmed/browser-core'
 import { DEFAULT_PROGRAMMATIC_ACTION_NAME_ATTRIBUTE } from './action/getActionNameFromElement'
 
 /**

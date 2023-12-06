@@ -1,4 +1,4 @@
-import { createNewEvent } from '@openobserve/browser-core/test'
+import { createNewEvent } from '@renanvizza-prontmed/browser-core/test'
 import type { RumConfiguration } from '../configuration'
 import type { ActionEventsHooks } from './listenActionEvents'
 import { listenActionEvents } from './listenActionEvents'

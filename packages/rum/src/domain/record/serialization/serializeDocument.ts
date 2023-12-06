@@ -1,4 +1,4 @@
-import type { RumConfiguration } from '@openobserve/browser-rum-core'
+import type { RumConfiguration } from '@renanvizza-prontmed/browser-rum-core'
 import type { SerializedNodeWithId } from '../../../types'
 import type { SerializationContext } from './serialization.types'
 import { serializeNodeWithId } from './serializeNode'

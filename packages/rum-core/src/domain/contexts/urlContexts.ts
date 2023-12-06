@@ -1,5 +1,5 @@
-import type { RelativeTime, Observable } from '@openobserve/browser-core'
-import { SESSION_TIME_OUT_DELAY, relativeNow, ValueHistory } from '@openobserve/browser-core'
+import type { RelativeTime, Observable } from '@renanvizza-prontmed/browser-core'
+import { SESSION_TIME_OUT_DELAY, relativeNow, ValueHistory } from '@renanvizza-prontmed/browser-core'
 import type { LocationChange } from '../../browser/locationChangeObservable'
 import type { LifeCycle } from '../lifeCycle'
 import { LifeCycleEventType } from '../lifeCycle'

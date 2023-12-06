@@ -9,7 +9,7 @@ See the [dedicated datadog documentation][1] for more details.
 To start collecting events, add [`@datadog/browser-rum`][2] to your `package.json` file, then initialize it with:
 
 ```javascript
-import { openobserveRum } from '@openobserve/browser-rum'
+import { openobserveRum } from '@renanvizza-prontmed/browser-rum'
 
 openobserveRum.init({
   applicationId: '<DATADOG_APPLICATION_ID>',

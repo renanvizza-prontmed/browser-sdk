@@ -1,4 +1,4 @@
-import { RecordType } from '@openobserve/browser-rum/src/types'
+import { RecordType } from '@renanvizza-prontmed/browser-rum/src/types'
 import { expireSession, findSessionCookie, renewSession } from '../../lib/helpers/session'
 import { bundleSetup, createTest, flushEvents, waitForRequests } from '../../lib/framework'
 import { browserExecute, browserExecuteAsync, sendXhr } from '../../lib/helpers/browser'

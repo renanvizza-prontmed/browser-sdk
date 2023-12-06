@@ -4,9 +4,9 @@ import type {
   DeflateEncoderStreamId,
   DeflateWorker,
   EncoderResult,
-} from '@openobserve/browser-core'
-import type { RumConfiguration } from '@openobserve/browser-rum-core'
-import { addEventListener, addTelemetryDebug, assign, concatBuffers } from '@openobserve/browser-core'
+} from '@renanvizza-prontmed/browser-core'
+import type { RumConfiguration } from '@renanvizza-prontmed/browser-rum-core'
+import { addEventListener, addTelemetryDebug, assign, concatBuffers } from '@renanvizza-prontmed/browser-core'
 
 export function createDeflateEncoder(
   configuration: RumConfiguration,

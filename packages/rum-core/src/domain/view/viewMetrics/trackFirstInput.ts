@@ -1,5 +1,5 @@
-import type { Duration, RelativeTime } from '@openobserve/browser-core'
-import { elapsed, find } from '@openobserve/browser-core'
+import type { Duration, RelativeTime } from '@renanvizza-prontmed/browser-core'
+import { elapsed, find } from '@renanvizza-prontmed/browser-core'
 import { isElementNode } from '../../../browser/htmlDomUtils'
 import type { RumConfiguration } from '../../configuration'
 import type { LifeCycle } from '../../lifeCycle'

@@ -1,7 +1,7 @@
-import type { ListenerHandler } from '@openobserve/browser-core'
-import { throttle, DOM_EVENT, addEventListeners, noop } from '@openobserve/browser-core'
-import type { RumConfiguration } from '@openobserve/browser-rum-core'
-import { initViewportObservable } from '@openobserve/browser-rum-core'
+import type { ListenerHandler } from '@renanvizza-prontmed/browser-core'
+import { throttle, DOM_EVENT, addEventListeners, noop } from '@renanvizza-prontmed/browser-core'
+import type { RumConfiguration } from '@renanvizza-prontmed/browser-rum-core'
+import { initViewportObservable } from '@renanvizza-prontmed/browser-rum-core'
 import type { ViewportResizeDimension, VisualViewportRecord } from '../../../types'
 import { getVisualViewport } from '../viewports'
 

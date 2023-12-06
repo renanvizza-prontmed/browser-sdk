@@ -4,10 +4,10 @@ import {
   isIE,
   noop,
   resetExperimentalFeatures,
-} from '@openobserve/browser-core'
+} from '@renanvizza-prontmed/browser-core'
 
-import type { RumConfiguration } from '@openobserve/browser-rum-core'
-import { isAdoptedStyleSheetsSupported } from '@openobserve/browser-core/test'
+import type { RumConfiguration } from '@renanvizza-prontmed/browser-rum-core'
+import { isAdoptedStyleSheetsSupported } from '@renanvizza-prontmed/browser-core/test'
 import {
   NodePrivacyLevel,
   PRIVACY_ATTR_NAME,

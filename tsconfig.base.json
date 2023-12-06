@@ -14,8 +14,8 @@
     "lib": ["ES2016", "DOM"],
 
     "paths": {
-      "@openobserve/browser-core": ["./packages/core/src"],
-      "@openobserve/browser-rum-core": ["./packages/rum-core/src"]
+      "@renanvizza-prontmed/browser-core": ["./packages/core/src"],
+      "@renanvizza-prontmed/browser-rum-core": ["./packages/rum-core/src"]
     }
   }
 }

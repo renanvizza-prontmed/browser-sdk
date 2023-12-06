@@ -1,5 +1,5 @@
-import type { RelativeTime } from '@openobserve/browser-core'
-import { Observable, noop, performDraw, startSessionManager } from '@openobserve/browser-core'
+import type { RelativeTime } from '@renanvizza-prontmed/browser-core'
+import { Observable, noop, performDraw, startSessionManager } from '@renanvizza-prontmed/browser-core'
 import type { RumConfiguration } from './configuration'
 import type { LifeCycle } from './lifeCycle'
 import { LifeCycleEventType } from './lifeCycle'

@@ -1,5 +1,5 @@
-import type { ClocksState } from '@openobserve/browser-core'
-import type { RumConfiguration, RumSession } from '@openobserve/browser-rum-core'
+import type { ClocksState } from '@renanvizza-prontmed/browser-core'
+import type { RumConfiguration, RumSession } from '@renanvizza-prontmed/browser-rum-core'
 
 import { getSessionReplayUrl, getDatadogSiteUrl } from './getSessionReplayUrl'
 

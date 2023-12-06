@@ -1,5 +1,5 @@
-import type { TimeoutId } from '@openobserve/browser-core'
-import { ONE_SECOND, clearTimeout, setTimeout } from '@openobserve/browser-core'
+import type { TimeoutId } from '@renanvizza-prontmed/browser-core'
+import { ONE_SECOND, clearTimeout, setTimeout } from '@renanvizza-prontmed/browser-core'
 import type { Click } from './trackClickActions'
 
 export interface ClickChain {

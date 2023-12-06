@@ -1,11 +1,11 @@
-import type { ClocksState, RelativeTime } from '@openobserve/browser-core'
-import { ErrorSource, ONE_MINUTE, display } from '@openobserve/browser-core'
+import type { ClocksState, RelativeTime } from '@renanvizza-prontmed/browser-core'
+import { ErrorSource, ONE_MINUTE, display } from '@renanvizza-prontmed/browser-core'
 import {
   initEventBridgeStub,
   deleteEventBridgeStub,
   cleanupSyntheticsWorkerValues,
   mockSyntheticsWorkerValues,
-} from '@openobserve/browser-core/test'
+} from '@renanvizza-prontmed/browser-core/test'
 import type { TestSetupBuilder } from '../../test'
 import {
   createRumSessionManagerMock,

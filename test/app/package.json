@@ -7,16 +7,16 @@
     "compat:ssr": "webpack --mode=development && node dist/app.js"
   },
   "dependencies": {
-    "@openobserve/browser-core": "portal:../../packages/core",
-    "@openobserve/browser-logs": "portal:../../packages/logs",
-    "@openobserve/browser-rum": "portal:../../packages/rum",
-    "@openobserve/browser-rum-core": "portal:../../packages/rum-core"
+    "@renanvizza-prontmed/browser-core": "portal:../../packages/core",
+    "@renanvizza-prontmed/browser-logs": "portal:../../packages/logs",
+    "@renanvizza-prontmed/browser-rum": "portal:../../packages/rum",
+    "@renanvizza-prontmed/browser-rum-core": "portal:../../packages/rum-core"
   },
   "resolutions": {
-    "@openobserve/browser-core": "portal:../../packages/core",
-    "@openobserve/browser-rum-core": "portal:../../packages/rum-core",
-    "@openobserve/browser-rum": "portal:../../packages/rum",
-    "@openobserve/browser-worker": "portal:../../packages/worker"
+    "@renanvizza-prontmed/browser-core": "portal:../../packages/core",
+    "@renanvizza-prontmed/browser-rum-core": "portal:../../packages/rum-core",
+    "@renanvizza-prontmed/browser-rum": "portal:../../packages/rum",
+    "@renanvizza-prontmed/browser-worker": "portal:../../packages/worker"
   },
   "devDependencies": {
     "ts-loader": "6.2.1",

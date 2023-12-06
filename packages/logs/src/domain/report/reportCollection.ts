@@ -1,11 +1,11 @@
-import type { Context, ClocksState, RawReport } from '@openobserve/browser-core'
+import type { Context, ClocksState, RawReport } from '@renanvizza-prontmed/browser-core'
 import {
   timeStampNow,
   ErrorSource,
   RawReportType,
   getFileFromStackTraceString,
   initReportObservable,
-} from '@openobserve/browser-core'
+} from '@renanvizza-prontmed/browser-core'
 import type { LogsConfiguration } from '../configuration'
 import type { LifeCycle } from '../lifeCycle'
 import { LifeCycleEventType } from '../lifeCycle'

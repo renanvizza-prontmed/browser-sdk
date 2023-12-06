@@ -1,6 +1,6 @@
-import type { RelativeTime } from '@openobserve/browser-core'
-import { DOM_EVENT } from '@openobserve/browser-core'
-import { createNewEvent, restorePageVisibility, setPageVisibility } from '@openobserve/browser-core/test'
+import type { RelativeTime } from '@renanvizza-prontmed/browser-core'
+import { DOM_EVENT } from '@renanvizza-prontmed/browser-core'
+import { createNewEvent, restorePageVisibility, setPageVisibility } from '@renanvizza-prontmed/browser-core/test'
 import type { RumConfiguration } from '../../configuration'
 import { trackFirstHidden } from './trackFirstHidden'
 

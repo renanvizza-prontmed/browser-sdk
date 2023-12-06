@@ -1,4 +1,4 @@
-import type { Context, Duration, RelativeTime, ServerDuration, TimeStamp } from '@openobserve/browser-core'
+import type { Context, Duration, RelativeTime, ServerDuration, TimeStamp } from '@renanvizza-prontmed/browser-core'
 import {
   assign,
   combine,
@@ -7,7 +7,7 @@ import {
   generateUUID,
   relativeNow,
   ResourceType,
-} from '@openobserve/browser-core'
+} from '@renanvizza-prontmed/browser-core'
 import { RumPerformanceEntryType } from '../src/browser/performanceCollection'
 import type {
   RumFirstInputTiming,

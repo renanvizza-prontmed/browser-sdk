@@ -1,5 +1,5 @@
-import { type Duration, type RelativeTime, resetExperimentalFeatures } from '@openobserve/browser-core'
-import { restorePageVisibility, setPageVisibility } from '@openobserve/browser-core/test'
+import { type Duration, type RelativeTime, resetExperimentalFeatures } from '@renanvizza-prontmed/browser-core'
+import { restorePageVisibility, setPageVisibility } from '@renanvizza-prontmed/browser-core/test'
 import type { TestSetupBuilder } from '../../../../test'
 import { appendElement, appendText, createPerformanceEntry, setup } from '../../../../test'
 import { LifeCycleEventType } from '../../lifeCycle'

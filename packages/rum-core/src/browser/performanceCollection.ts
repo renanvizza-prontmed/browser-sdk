@@ -1,4 +1,4 @@
-import type { Duration, RelativeTime, TimeStamp } from '@openobserve/browser-core'
+import type { Duration, RelativeTime, TimeStamp } from '@renanvizza-prontmed/browser-core'
 import {
   dateNow,
   assign,
@@ -12,7 +12,7 @@ import {
   runOnReadyState,
   addEventListener,
   objectHasValue,
-} from '@openobserve/browser-core'
+} from '@renanvizza-prontmed/browser-core'
 
 import type { RumConfiguration } from '../domain/configuration'
 import type { LifeCycle } from '../domain/lifeCycle'

@@ -1,4 +1,4 @@
-import { ErrorSource } from '@openobserve/browser-core'
+import { ErrorSource } from '@renanvizza-prontmed/browser-core'
 import type { RawRuntimeLogsEvent } from '../../rawLogsEvent.types'
 import type { LogsConfiguration } from '../configuration'
 import { StatusType } from '../logger'

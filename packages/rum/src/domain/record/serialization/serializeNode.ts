@@ -1,5 +1,5 @@
-import { isNodeShadowRoot, hasChildNodes, forEachChildNodes } from '@openobserve/browser-rum-core'
-import { assign } from '@openobserve/browser-core'
+import { isNodeShadowRoot, hasChildNodes, forEachChildNodes } from '@renanvizza-prontmed/browser-rum-core'
+import { assign } from '@renanvizza-prontmed/browser-core'
 import type {
   DocumentFragmentNode,
   DocumentNode,

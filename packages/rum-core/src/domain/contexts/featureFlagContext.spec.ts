@@ -1,4 +1,4 @@
-import type { RelativeTime } from '@openobserve/browser-core'
+import type { RelativeTime } from '@renanvizza-prontmed/browser-core'
 import {
   display,
   ExperimentalFeature,
@@ -6,7 +6,7 @@ import {
   addExperimentalFeatures,
   relativeToClocks,
   CUSTOMER_DATA_BYTES_LIMIT,
-} from '@openobserve/browser-core'
+} from '@renanvizza-prontmed/browser-core'
 import type { TestSetupBuilder } from '../../../test'
 import { setup } from '../../../test'
 import type { Clock } from '../../../../core/test'

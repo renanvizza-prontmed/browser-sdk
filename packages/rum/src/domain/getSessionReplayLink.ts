@@ -1,5 +1,5 @@
-import type { RumConfiguration, RumSessionManager, ViewContexts, RumSession } from '@openobserve/browser-rum-core'
-import { getSessionReplayUrl } from '@openobserve/browser-rum-core'
+import type { RumConfiguration, RumSessionManager, ViewContexts, RumSession } from '@renanvizza-prontmed/browser-rum-core'
+import { getSessionReplayUrl } from '@renanvizza-prontmed/browser-rum-core'
 import { isBrowserSupported } from '../boot/isBrowserSupported'
 
 export function getSessionReplayLink(

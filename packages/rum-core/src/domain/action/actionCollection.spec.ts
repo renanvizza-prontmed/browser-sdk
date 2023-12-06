@@ -1,5 +1,5 @@
-import type { Duration, RelativeTime, ServerDuration, TimeStamp } from '@openobserve/browser-core'
-import { createNewEvent } from '@openobserve/browser-core/test'
+import type { Duration, RelativeTime, ServerDuration, TimeStamp } from '@renanvizza-prontmed/browser-core'
+import { createNewEvent } from '@renanvizza-prontmed/browser-core/test'
 import type { TestSetupBuilder } from '../../../test'
 import { setup } from '../../../test'
 import { RumEventType, ActionType } from '../../rawRumEvent.types'

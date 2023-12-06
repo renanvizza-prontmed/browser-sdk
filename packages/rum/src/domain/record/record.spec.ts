@@ -1,8 +1,8 @@
-import { DefaultPrivacyLevel, findLast, isIE } from '@openobserve/browser-core'
-import type { RumConfiguration } from '@openobserve/browser-rum-core'
-import { LifeCycle } from '@openobserve/browser-rum-core'
-import type { Clock } from '@openobserve/browser-core/test'
-import { createNewEvent, collectAsyncCalls } from '@openobserve/browser-core/test'
+import { DefaultPrivacyLevel, findLast, isIE } from '@renanvizza-prontmed/browser-core'
+import type { RumConfiguration } from '@renanvizza-prontmed/browser-rum-core'
+import { LifeCycle } from '@renanvizza-prontmed/browser-rum-core'
+import type { Clock } from '@renanvizza-prontmed/browser-core/test'
+import { createNewEvent, collectAsyncCalls } from '@renanvizza-prontmed/browser-core/test'
 import { findFullSnapshot, findNode, recordsPerFullSnapshot } from '../../../test'
 import type {
   BrowserIncrementalSnapshotRecord,

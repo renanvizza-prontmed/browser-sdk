@@ -1,5 +1,5 @@
-import { arrayFrom } from '@openobserve/browser-core'
-import { registerCleanupTask } from '@openobserve/browser-core/test'
+import { arrayFrom } from '@renanvizza-prontmed/browser-core'
+import { registerCleanupTask } from '@renanvizza-prontmed/browser-core/test'
 
 export function appendText(text: string, container: Element | ShadowRoot = document.body): Text {
   const textNode = document.createTextNode(text)

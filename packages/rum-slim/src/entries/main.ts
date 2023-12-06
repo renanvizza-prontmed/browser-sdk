@@ -1,7 +1,7 @@
 // Keep the following in sync with packages/rum/src/entries/main.ts
-import { defineGlobal, getGlobalObject, noop } from '@openobserve/browser-core'
-import type { RumPublicApi } from '@openobserve/browser-rum-core'
-import { makeRumPublicApi, startRum } from '@openobserve/browser-rum-core'
+import { defineGlobal, getGlobalObject, noop } from '@renanvizza-prontmed/browser-core'
+import type { RumPublicApi } from '@renanvizza-prontmed/browser-rum-core'
+import { makeRumPublicApi, startRum } from '@renanvizza-prontmed/browser-rum-core'
 import { getSessionReplayLink } from '../domain/getSessionReplayLink'
 
 export {
@@ -24,8 +24,8 @@ export {
   RumXhrResourceEventDomainContext,
   RumOtherResourceEventDomainContext,
   RumLongTaskEventDomainContext,
-} from '@openobserve/browser-rum-core'
-export { DefaultPrivacyLevel } from '@openobserve/browser-core'
+} from '@renanvizza-prontmed/browser-rum-core'
+export { DefaultPrivacyLevel } from '@renanvizza-prontmed/browser-core'
 
 export const openobserveRum = makeRumPublicApi(startRum, {
   start: noop,

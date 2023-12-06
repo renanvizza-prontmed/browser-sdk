@@ -8,7 +8,7 @@ import type {
   TimeStamp,
   RawErrorCause,
   DefaultPrivacyLevel,
-} from '@openobserve/browser-core'
+} from '@renanvizza-prontmed/browser-core'
 import type { PageState } from './domain/contexts/pageStateHistory'
 
 export const enum RumEventType {

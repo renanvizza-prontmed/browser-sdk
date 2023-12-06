@@ -1,5 +1,5 @@
-import type { Context } from '@openobserve/browser-core'
-import { getEventBridge } from '@openobserve/browser-core'
+import type { Context } from '@renanvizza-prontmed/browser-core'
+import { getEventBridge } from '@renanvizza-prontmed/browser-core'
 import type { LifeCycle } from '../domain/lifeCycle'
 import { LifeCycleEventType } from '../domain/lifeCycle'
 import type { RumEvent } from '../rumEvent.types'

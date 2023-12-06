@@ -1,4 +1,4 @@
-import type { Context, EventRateLimiter, RawError, RelativeTime } from '@openobserve/browser-core'
+import type { Context, EventRateLimiter, RawError, RelativeTime } from '@renanvizza-prontmed/browser-core'
 import {
   getSyntheticsResultId,
   getSyntheticsTestId,
@@ -9,7 +9,7 @@ import {
   createEventRateLimiter,
   getRelativeTime,
   isEmptyObject,
-} from '@openobserve/browser-core'
+} from '@renanvizza-prontmed/browser-core'
 import type { CommonContext } from '../rawLogsEvent.types'
 import type { LogsConfiguration } from './configuration'
 import type { LifeCycle } from './lifeCycle'

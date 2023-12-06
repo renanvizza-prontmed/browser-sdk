@@ -1,4 +1,4 @@
-import { isIE } from '@openobserve/browser-core'
+import { isIE } from '@renanvizza-prontmed/browser-core'
 import { getCssRulesString } from './serializeAttributes'
 
 const CSS_FILE_URL = '/base/packages/rum/test/toto.css'

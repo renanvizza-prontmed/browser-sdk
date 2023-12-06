@@ -1,5 +1,5 @@
-import type { Observable, RawError } from '@openobserve/browser-core'
-import { clocksNow, ErrorHandling, ErrorSource, initReportObservable, RawReportType } from '@openobserve/browser-core'
+import type { Observable, RawError } from '@renanvizza-prontmed/browser-core'
+import { clocksNow, ErrorHandling, ErrorSource, initReportObservable, RawReportType } from '@renanvizza-prontmed/browser-core'
 import type { RumConfiguration } from '../configuration'
 
 export function trackReportError(configuration: RumConfiguration, errorObservable: Observable<RawError>) {

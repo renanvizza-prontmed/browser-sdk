@@ -1,4 +1,4 @@
-import { DefaultPrivacyLevel } from '@openobserve/browser-core'
+import { DefaultPrivacyLevel } from '@renanvizza-prontmed/browser-core'
 
 export const NodePrivacyLevel = {
   IGNORE: 'ignore',

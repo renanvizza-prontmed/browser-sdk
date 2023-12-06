@@ -1,4 +1,4 @@
-import type { RelativeTime } from '@openobserve/browser-core'
+import type { RelativeTime } from '@renanvizza-prontmed/browser-core'
 import type { LogsSessionManager } from './logsSessionManager'
 
 export interface InternalContext {

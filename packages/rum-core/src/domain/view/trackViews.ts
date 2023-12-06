@@ -1,4 +1,4 @@
-import type { Duration, ClocksState, TimeStamp, Subscription, RelativeTime } from '@openobserve/browser-core'
+import type { Duration, ClocksState, TimeStamp, Subscription, RelativeTime } from '@renanvizza-prontmed/browser-core'
 import {
   noop,
   PageExitReason,
@@ -16,7 +16,7 @@ import {
   clearInterval,
   setTimeout,
   Observable,
-} from '@openobserve/browser-core'
+} from '@renanvizza-prontmed/browser-core'
 
 import type { ViewCustomTimings } from '../../rawRumEvent.types'
 import { ViewLoadingType } from '../../rawRumEvent.types'

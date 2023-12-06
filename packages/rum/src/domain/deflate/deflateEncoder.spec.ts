@@ -1,6 +1,6 @@
-import type { RawTelemetryEvent, EncoderResult } from '@openobserve/browser-core'
-import type { RumConfiguration } from '@openobserve/browser-rum-core'
-import { noop, startFakeTelemetry, DeflateEncoderStreamId } from '@openobserve/browser-core'
+import type { RawTelemetryEvent, EncoderResult } from '@renanvizza-prontmed/browser-core'
+import type { RumConfiguration } from '@renanvizza-prontmed/browser-rum-core'
+import { noop, startFakeTelemetry, DeflateEncoderStreamId } from '@renanvizza-prontmed/browser-core'
 import { MockWorker } from '../../../test'
 import { createDeflateEncoder } from './deflateEncoder'
 

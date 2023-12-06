@@ -1,5 +1,5 @@
-import type { RelativeTime } from '@openobserve/browser-core'
-import { DOM_EVENT, ONE_MINUTE, addEventListeners, findLast } from '@openobserve/browser-core'
+import type { RelativeTime } from '@renanvizza-prontmed/browser-core'
+import { DOM_EVENT, ONE_MINUTE, addEventListeners, findLast } from '@renanvizza-prontmed/browser-core'
 import { LifeCycleEventType } from '../../lifeCycle'
 import type { LifeCycle } from '../../lifeCycle'
 import type { RumConfiguration } from '../../configuration'

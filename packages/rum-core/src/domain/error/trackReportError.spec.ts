@@ -1,7 +1,7 @@
-import type { RawError, Subscription } from '@openobserve/browser-core'
-import { ErrorHandling, ErrorSource, Observable, clocksNow } from '@openobserve/browser-core'
-import type { Clock } from '@openobserve/browser-core/test'
-import { mockClock, stubReportingObserver } from '@openobserve/browser-core/test'
+import type { RawError, Subscription } from '@renanvizza-prontmed/browser-core'
+import { ErrorHandling, ErrorSource, Observable, clocksNow } from '@renanvizza-prontmed/browser-core'
+import type { Clock } from '@renanvizza-prontmed/browser-core/test'
+import { mockClock, stubReportingObserver } from '@renanvizza-prontmed/browser-core/test'
 import type { RumConfiguration } from '../configuration'
 import { trackReportError } from './trackReportError'
 

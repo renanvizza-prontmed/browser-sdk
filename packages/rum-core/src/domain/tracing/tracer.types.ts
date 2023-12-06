@@ -1,4 +1,4 @@
-import type { MatchOption } from '@openobserve/browser-core'
+import type { MatchOption } from '@renanvizza-prontmed/browser-core'
 
 /**
  * datadog: Datadog (x-openobserve-*)

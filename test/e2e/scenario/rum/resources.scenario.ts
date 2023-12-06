@@ -1,4 +1,4 @@
-import type { RumResourceEvent } from '@openobserve/browser-rum'
+import type { RumResourceEvent } from '@renanvizza-prontmed/browser-rum'
 import type { IntakeRegistry } from '../../lib/framework'
 import { flushEvents, bundleSetup, createTest, html } from '../../lib/framework'
 import { browserExecuteAsync, sendXhr } from '../../lib/helpers/browser'

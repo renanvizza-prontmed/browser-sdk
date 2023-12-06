@@ -1,4 +1,4 @@
-import { SESSION_STORE_KEY } from '@openobserve/browser-core'
+import { SESSION_STORE_KEY } from '@renanvizza-prontmed/browser-core'
 import { createTest } from '../lib/framework'
 
 describe('Session Stores', () => {
