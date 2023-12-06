@@ -11,7 +11,7 @@ describe('API calls and events around init', () => {
     .run(async () => {
       await withBrowserLogs((logs) => {
         expect(logs.length).toBe(1)
-        expect(logs[0].message).toEqual(jasmine.stringContaining('Datadog Browser SDK'))
+        expect(logs[0].message).toEqual(jasmine.stringContaining('Openobserve Browser SDK'))
         expect(logs[0].message).toEqual(jasmine.stringContaining('Missing configuration'))
       })
     })

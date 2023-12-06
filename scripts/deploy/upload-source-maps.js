@@ -75,7 +75,7 @@ function uploadSourceMaps(packageName, service, prefix, bundleFolder, sites) {
     printLog(`Uploading ${packageName} source maps with prefix ${prefix} for ${site}...`)
 
     command`
-    datadog-ci sourcemaps upload ${bundleFolder}
+    openobserve-ci sourcemaps upload ${bundleFolder}
       --service ${service}
       --release-version ${getBuildEnvValue('SDK_VERSION')}
       --minified-path-prefix ${prefix}

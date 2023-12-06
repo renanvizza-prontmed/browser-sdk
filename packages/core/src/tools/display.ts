@@ -41,7 +41,7 @@ Object.keys(ConsoleApiName).forEach((name) => {
   originalConsoleMethods[name as ConsoleApiName] = globalConsole[name as ConsoleApiName]
 })
 
-const PREFIX = 'Datadog Browser SDK:'
+const PREFIX = 'Openobserve Browser SDK:'
 
 export const display: Display = {
   debug: originalConsoleMethods.debug.bind(globalConsole, PREFIX),

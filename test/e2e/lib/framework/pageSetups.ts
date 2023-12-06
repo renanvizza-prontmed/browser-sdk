@@ -58,7 +58,7 @@ n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
   if (options.logs) {
     body += html`
       <script>
-        ${formatSnippet('./datadog-logs.js', 'OO_LOGS')}
+        ${formatSnippet('./openobserve-logs.js', 'OO_LOGS')}
         OO_LOGS.onReady(function () {
           OO_LOGS.setGlobalContext(${JSON.stringify(options.context)})
           OO_LOGS.init(${formatConfiguration(options.logs, servers)})
@@ -70,7 +70,7 @@ n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
   if (options.rum) {
     body += html`
       <script type="text/javascript">
-        ${formatSnippet(options.useRumSlim ? './datadog-rum-slim.js' : './datadog-rum.js', 'OO_RUM')}
+        ${formatSnippet(options.useRumSlim ? './openobserve-rum-slim.js' : './openobserve-rum.js', 'OO_RUM')}
         OO_RUM.onReady(function () {
           OO_RUM.setGlobalContext(${JSON.stringify(options.context)})
           ;(${options.rumInit.toString()})(${formatConfiguration(options.rum, servers)})
@@ -94,7 +94,7 @@ export function bundleSetup(options: SetupOptions, servers: Servers) {
 
   if (options.logs) {
     header += html`
-      <script type="text/javascript" src="./datadog-logs.js"></script>
+      <script type="text/javascript" src="./openobserve-logs.js"></script>
       <script type="text/javascript">
         OO_LOGS.setGlobalContext(${JSON.stringify(options.context)})
         OO_LOGS.init(${formatConfiguration(options.logs, servers)})
@@ -106,7 +106,7 @@ export function bundleSetup(options: SetupOptions, servers: Servers) {
     header += html`
       <script
         type="text/javascript"
-        src="${options.useRumSlim ? './datadog-rum-slim.js' : './datadog-rum.js'}"
+        src="${options.useRumSlim ? './openobserve-rum-slim.js' : './openobserve-rum.js'}"
       ></script>
       <script type="text/javascript">
         OO_RUM.setGlobalContext(${JSON.stringify(options.context)})

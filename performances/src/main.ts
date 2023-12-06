@@ -31,7 +31,7 @@ Options:
   const proxy = await startProxy()
 
   const options: ProfilingOptions = {
-    bundleUrl: 'https://www.datadoghq-browser-agent.com/datadog-rum-v4.js',
+    bundleUrl: 'https://cloud.openobserve.ai/openobserve-rum-v4.js',
     proxy,
     startRecording,
   }

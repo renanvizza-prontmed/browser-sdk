@@ -28,7 +28,7 @@ describe('logs', () => {
       await withBrowserLogs((logs) => {
         expect(logs.length).toBe(1)
         expect(logs[0].level).toBe('WARNING')
-        expect(logs[0].message).not.toEqual(jasmine.stringContaining('Datadog Browser SDK'))
+        expect(logs[0].message).not.toEqual(jasmine.stringContaining('Openobserve Browser SDK'))
         expect(logs[0].message).toEqual(jasmine.stringContaining('hello'))
       })
     })
