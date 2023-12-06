@@ -1,5 +1,5 @@
-import { noop } from '@renanvizza-prontmed/browser-core'
-import type { RumConfiguration } from '@renanvizza-prontmed/browser-rum-core'
+import { noop } from '@openobserve/browser-core'
+import type { RumConfiguration } from '@openobserve/browser-rum-core'
 import type { ShadowRootsController } from '../shadowRootsController'
 import { NodePrivacyLevel } from '../../../constants'
 

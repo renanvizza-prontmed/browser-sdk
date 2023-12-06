@@ -1,6 +1,6 @@
-import type { LogsInitConfiguration } from '@renanvizza-prontmed/browser-logs'
-import type { RumInitConfiguration } from '@renanvizza-prontmed/browser-rum-core'
-import { DOM_EVENT } from '@renanvizza-prontmed/browser-core/src/browser/addEventListener'
+import type { LogsInitConfiguration } from '@openobserve/browser-logs'
+import type { RumInitConfiguration } from '@openobserve/browser-rum-core'
+import { DOM_EVENT } from '@openobserve/browser-core/src/browser/addEventListener'
 import type { Servers } from './httpServers'
 
 export interface SetupOptions {

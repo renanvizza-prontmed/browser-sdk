@@ -1,4 +1,4 @@
-import { safeTruncate, isIE, find } from '@renanvizza-prontmed/browser-core'
+import { safeTruncate, isIE, find } from '@openobserve/browser-core'
 
 /**
  * Get the action name from the attribute 'data-oo-action-name' on the element or any of its parent.

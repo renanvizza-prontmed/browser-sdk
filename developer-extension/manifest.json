@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Datadog Browser SDK developer extension",
+  "name": "Openobserve Browser SDK developer extension",
   "permissions": ["storage", "browsingData", "declarativeNetRequest", "webNavigation", "scripting"],
   "host_permissions": ["<all_urls>"],
   "icons": {

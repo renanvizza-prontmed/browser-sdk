@@ -1,5 +1,5 @@
-import { round, find, ONE_SECOND, noop } from '@renanvizza-prontmed/browser-core'
-import type { RelativeTime } from '@renanvizza-prontmed/browser-core'
+import { round, find, ONE_SECOND, noop } from '@openobserve/browser-core'
+import type { RelativeTime } from '@openobserve/browser-core'
 import { isElementNode } from '../../../browser/htmlDomUtils'
 import type { LifeCycle } from '../../lifeCycle'
 import { LifeCycleEventType } from '../../lifeCycle'

@@ -1,4 +1,4 @@
-import { getSyntheticsResultId, getSyntheticsTestId, willSyntheticsInjectRum } from '@renanvizza-prontmed/browser-core'
+import { getSyntheticsResultId, getSyntheticsTestId, willSyntheticsInjectRum } from '@openobserve/browser-core'
 
 export function getSyntheticsContext() {
   const testId = getSyntheticsTestId()

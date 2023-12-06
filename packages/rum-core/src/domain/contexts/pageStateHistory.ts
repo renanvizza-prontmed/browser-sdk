@@ -1,4 +1,4 @@
-import type { Duration, RelativeTime } from '@renanvizza-prontmed/browser-core'
+import type { Duration, RelativeTime } from '@openobserve/browser-core'
 import {
   elapsed,
   ValueHistory,
@@ -7,7 +7,7 @@ import {
   addEventListeners,
   relativeNow,
   DOM_EVENT,
-} from '@renanvizza-prontmed/browser-core'
+} from '@openobserve/browser-core'
 import type { RumConfiguration } from '../configuration'
 import type { PageStateServerEntry } from '../../rawRumEvent.types'
 

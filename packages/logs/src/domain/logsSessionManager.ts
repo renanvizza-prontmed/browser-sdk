@@ -1,5 +1,5 @@
-import type { RelativeTime } from '@renanvizza-prontmed/browser-core'
-import { Observable, performDraw, startSessionManager } from '@renanvizza-prontmed/browser-core'
+import type { RelativeTime } from '@openobserve/browser-core'
+import { Observable, performDraw, startSessionManager } from '@openobserve/browser-core'
 import type { LogsConfiguration } from './configuration'
 
 export const LOGS_SESSION_KEY = 'logs'

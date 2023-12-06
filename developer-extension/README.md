@@ -14,7 +14,7 @@ The packed extension is not (yet?) published publicly. You will need to clone th
 build the extension manually.
 
 ```
-$ git clone https://github.com/DataDog/browser-sdk
+$ git clone https://github.com/openobserve/browser-sdk
 $ cd browser-sdk
 $ yarn
 $ yarn build

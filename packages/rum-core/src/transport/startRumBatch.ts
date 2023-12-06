@@ -1,10 +1,10 @@
-import type { Context, TelemetryEvent, Observable, RawError, PageExitEvent, Encoder } from '@renanvizza-prontmed/browser-core'
+import type { Context, TelemetryEvent, Observable, RawError, PageExitEvent, Encoder } from '@openobserve/browser-core'
 import {
   DeflateEncoderStreamId,
   combine,
   isTelemetryReplicationAllowed,
   startBatchWithReplica,
-} from '@renanvizza-prontmed/browser-core'
+} from '@openobserve/browser-core'
 import type { RumConfiguration } from '../domain/configuration'
 import type { LifeCycle } from '../domain/lifeCycle'
 import { LifeCycleEventType } from '../domain/lifeCycle'

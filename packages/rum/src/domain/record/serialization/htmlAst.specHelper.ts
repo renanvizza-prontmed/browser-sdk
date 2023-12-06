@@ -1,5 +1,5 @@
-import type { RumConfiguration } from '@renanvizza-prontmed/browser-rum-core'
-import { display, noop, objectValues } from '@renanvizza-prontmed/browser-core'
+import type { RumConfiguration } from '@openobserve/browser-rum-core'
+import { display, noop, objectValues } from '@openobserve/browser-core'
 import type { SerializedNodeWithId } from '../../../types'
 import { serializeNodeWithId, SerializationContextStatus, createElementsScrollPositions } from '..'
 import { NodePrivacyLevel, PRIVACY_ATTR_NAME } from '../../../constants'

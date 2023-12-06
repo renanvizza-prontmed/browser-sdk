@@ -1,5 +1,5 @@
-import { openobserveRum } from '@renanvizza-prontmed/browser-rum'
-import { openobserveLogs } from '@renanvizza-prontmed/browser-logs'
+import { openobserveRum } from '@openobserve/browser-rum'
+import { openobserveLogs } from '@openobserve/browser-logs'
 import packageJson from '../../package.json'
 import { DEFAULT_PANEL_TAB } from '../common/constants'
 

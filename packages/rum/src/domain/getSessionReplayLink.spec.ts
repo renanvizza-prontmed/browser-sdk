@@ -1,5 +1,5 @@
-import { isIE } from '@renanvizza-prontmed/browser-core'
-import type { RumConfiguration, ViewContexts } from '@renanvizza-prontmed/browser-rum-core'
+import { isIE } from '@openobserve/browser-core'
+import type { RumConfiguration, ViewContexts } from '@openobserve/browser-rum-core'
 import { createRumSessionManagerMock } from '../../../rum-core/test'
 import { getSessionReplayLink } from './getSessionReplayLink'
 import { addRecord, resetReplayStats } from './replayStats'

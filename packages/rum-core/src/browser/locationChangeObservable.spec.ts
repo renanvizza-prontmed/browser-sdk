@@ -1,6 +1,6 @@
-import type { Observable, Subscription } from '@renanvizza-prontmed/browser-core'
-import { mockLocation } from '@renanvizza-prontmed/browser-core/test'
-import type { RumConfiguration } from '@renanvizza-prontmed/browser-rum-core'
+import type { Observable, Subscription } from '@openobserve/browser-core'
+import { mockLocation } from '@openobserve/browser-core/test'
+import type { RumConfiguration } from '@openobserve/browser-rum-core'
 import type { LocationChange } from './locationChangeObservable'
 import { createLocationChangeObservable } from './locationChangeObservable'
 

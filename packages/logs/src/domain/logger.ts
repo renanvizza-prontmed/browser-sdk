@@ -1,4 +1,4 @@
-import type { Context } from '@renanvizza-prontmed/browser-core'
+import type { Context } from '@openobserve/browser-core'
 import {
   clocksNow,
   computeRawError,
@@ -11,7 +11,7 @@ import {
   monitored,
   sanitize,
   NonErrorPrefix,
-} from '@renanvizza-prontmed/browser-core'
+} from '@openobserve/browser-core'
 
 import type { LogsEvent } from '../logsEvent.types'
 

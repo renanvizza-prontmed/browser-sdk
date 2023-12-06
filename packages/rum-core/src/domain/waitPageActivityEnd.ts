@@ -1,4 +1,4 @@
-import type { Subscription, TimeoutId, TimeStamp } from '@renanvizza-prontmed/browser-core'
+import type { Subscription, TimeoutId, TimeStamp } from '@openobserve/browser-core'
 import {
   instrumentMethodAndCallOriginal,
   matchList,
@@ -7,7 +7,7 @@ import {
   timeStampNow,
   setTimeout,
   clearTimeout,
-} from '@renanvizza-prontmed/browser-core'
+} from '@openobserve/browser-core'
 import { RumPerformanceEntryType } from '../browser/performanceCollection'
 import type { RumConfiguration } from './configuration'
 import type { LifeCycle } from './lifeCycle'

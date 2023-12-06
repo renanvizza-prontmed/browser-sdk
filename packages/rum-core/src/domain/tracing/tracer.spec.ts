@@ -1,4 +1,4 @@
-import { display, isIE, objectEntries } from '@renanvizza-prontmed/browser-core'
+import { display, isIE, objectEntries } from '@openobserve/browser-core'
 import type { TestSetupBuilder, RumSessionManagerMock } from '../../../test'
 import { setup, createRumSessionManagerMock } from '../../../test'
 import type { RumFetchResolveContext, RumFetchStartContext, RumXhrStartContext } from '../requestCollection'

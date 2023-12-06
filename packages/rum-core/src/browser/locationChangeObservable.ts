@@ -4,7 +4,7 @@ import {
   instrumentMethodAndCallOriginal,
   Observable,
   shallowClone,
-} from '@renanvizza-prontmed/browser-core'
+} from '@openobserve/browser-core'
 import type { RumConfiguration } from '../domain/configuration'
 
 export interface LocationChange {

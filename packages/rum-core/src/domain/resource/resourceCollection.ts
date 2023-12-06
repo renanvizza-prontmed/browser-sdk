@@ -9,8 +9,8 @@ import {
   isNumber,
   isExperimentalFeatureEnabled,
   ExperimentalFeature,
-} from '@renanvizza-prontmed/browser-core'
-import type { ClocksState, Duration } from '@renanvizza-prontmed/browser-core'
+} from '@openobserve/browser-core'
+import type { ClocksState, Duration } from '@openobserve/browser-core'
 import type { RumConfiguration } from '../configuration'
 import type { RumPerformanceResourceTiming } from '../../browser/performanceCollection'
 import { RumPerformanceEntryType } from '../../browser/performanceCollection'

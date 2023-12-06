@@ -1,5 +1,5 @@
-import type { Duration, RelativeTime } from '@renanvizza-prontmed/browser-core'
-import { isIE, relativeToClocks } from '@renanvizza-prontmed/browser-core'
+import type { Duration, RelativeTime } from '@openobserve/browser-core'
+import { isIE, relativeToClocks } from '@openobserve/browser-core'
 import { createPerformanceEntry } from '../../../test'
 import type { RumPerformanceResourceTiming } from '../../browser/performanceCollection'
 import { RumPerformanceEntryType } from '../../browser/performanceCollection'

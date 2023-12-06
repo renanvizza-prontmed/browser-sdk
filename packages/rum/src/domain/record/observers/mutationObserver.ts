@@ -1,11 +1,11 @@
-import { monitor, noop } from '@renanvizza-prontmed/browser-core'
-import type { RumConfiguration } from '@renanvizza-prontmed/browser-rum-core'
+import { monitor, noop } from '@openobserve/browser-core'
+import type { RumConfiguration } from '@openobserve/browser-rum-core'
 import {
   isNodeShadowHost,
   getMutationObserverConstructor,
   getParentNode,
   forEachChildNodes,
-} from '@renanvizza-prontmed/browser-rum-core'
+} from '@openobserve/browser-rum-core'
 import { NodePrivacyLevel } from '../../../constants'
 import type {
   AddedNodeMutation,

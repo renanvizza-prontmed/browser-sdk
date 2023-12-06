@@ -1,4 +1,4 @@
-import { Observable } from '@renanvizza-prontmed/browser-core'
+import { Observable } from '@openobserve/browser-core'
 import { startInternalContext } from './internalContext'
 
 describe('internal context', () => {

@@ -1,4 +1,4 @@
-import { noop, monitor } from '@renanvizza-prontmed/browser-core'
+import { noop, monitor } from '@openobserve/browser-core'
 import type { RumMutationRecord } from './observers'
 
 /**

@@ -1,5 +1,5 @@
-import { sanitize, deepClone, getType, objectEntries } from '@renanvizza-prontmed/browser-core'
-import type { Context } from '@renanvizza-prontmed/browser-core'
+import { sanitize, deepClone, getType, objectEntries } from '@openobserve/browser-core'
+import type { Context } from '@openobserve/browser-core'
 
 export type ModifiableFieldPaths = Record<string, 'string' | 'object'>
 

@@ -1,4 +1,4 @@
-import type { Context, ErrorSource, TimeStamp, User } from '@renanvizza-prontmed/browser-core'
+import type { Context, ErrorSource, TimeStamp, User } from '@openobserve/browser-core'
 import type { StatusType } from './domain/logger'
 
 export type RawLogsEvent =

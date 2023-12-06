@@ -4,8 +4,8 @@ import connectBusboy from 'connect-busboy'
 import express from 'express'
 
 import cors from 'cors'
-import type { BrowserSegmentMetadataAndSegmentSizes } from '@renanvizza-prontmed/browser-rum/src/domain/segmentCollection'
-import type { BrowserSegment } from '@renanvizza-prontmed/browser-rum/src/types'
+import type { BrowserSegmentMetadataAndSegmentSizes } from '@openobserve/browser-rum/src/domain/segmentCollection'
+import type { BrowserSegment } from '@openobserve/browser-rum/src/types'
 import type {
   IntakeRegistry,
   IntakeRequest,

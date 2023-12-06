@@ -8,7 +8,7 @@ import {
   getType,
   isMatchOption,
   matchList,
-} from '@renanvizza-prontmed/browser-core'
+} from '@openobserve/browser-core'
 import type { RumConfiguration } from '../configuration'
 import type {
   RumFetchResolveContext,

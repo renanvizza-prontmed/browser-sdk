@@ -1,5 +1,5 @@
-import { isIE } from '@renanvizza-prontmed/browser-core'
-import { isFirefox } from '@renanvizza-prontmed/browser-core/test'
+import { isIE } from '@openobserve/browser-core'
+import { isFirefox } from '@openobserve/browser-core/test'
 import { serializeDocument, SerializationContextStatus } from '../serialization'
 import { createElementsScrollPositions } from '../elementsScrollPositions'
 import type { StyleSheetCallback } from './styleSheetObserver'

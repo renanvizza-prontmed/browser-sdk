@@ -1,5 +1,5 @@
-import { noop, ONE_MINUTE } from '@renanvizza-prontmed/browser-core'
-import type { Duration, RelativeTime } from '@renanvizza-prontmed/browser-core'
+import { noop, ONE_MINUTE } from '@openobserve/browser-core'
+import type { Duration, RelativeTime } from '@openobserve/browser-core'
 import { RumPerformanceEntryType, supportPerformanceTimingEvent } from '../../../browser/performanceCollection'
 import type { RumFirstInputTiming, RumPerformanceEventTiming } from '../../../browser/performanceCollection'
 import { LifeCycleEventType } from '../../lifeCycle'

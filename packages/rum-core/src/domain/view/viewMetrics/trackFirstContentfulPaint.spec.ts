@@ -1,5 +1,5 @@
-import type { RelativeTime } from '@renanvizza-prontmed/browser-core'
-import { restorePageVisibility, setPageVisibility } from '@renanvizza-prontmed/browser-core/test'
+import type { RelativeTime } from '@openobserve/browser-core'
+import { restorePageVisibility, setPageVisibility } from '@openobserve/browser-core/test'
 import { RumPerformanceEntryType } from '../../../browser/performanceCollection'
 import type { TestSetupBuilder } from '../../../../test'
 import { createPerformanceEntry, setup } from '../../../../test'

@@ -5,7 +5,7 @@ import type {
   ContextManager,
   DeflateEncoderStreamId,
   Encoder,
-} from '@renanvizza-prontmed/browser-core'
+} from '@openobserve/browser-core'
 import {
   sendToExtension,
   createPageExitObservable,
@@ -15,7 +15,7 @@ import {
   canUseEventBridge,
   getEventBridge,
   addTelemetryDebug,
-} from '@renanvizza-prontmed/browser-core'
+} from '@openobserve/browser-core'
 import { createDOMMutationObservable } from '../browser/domMutationObservable'
 import { startPerformanceCollection } from '../browser/performanceCollection'
 import { startRumAssembly } from '../domain/assembly'

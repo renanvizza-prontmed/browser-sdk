@@ -50,7 +50,7 @@ RUN apt-get install -y -q --no-install-recommends jq
 RUN apt-get install -y -q --no-install-recommends g++ build-essential
 
 # Openobserve CI cli
-RUN yarn global add @renanvizza-prontmed/browser-workeropenobserve-ci
+RUN yarn global add @openobserve/browser-workeropenobserve-ci
 
 # Gihub cli
 RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg -o /usr/share/keyrings/githubcli-archive-keyring.gpg \

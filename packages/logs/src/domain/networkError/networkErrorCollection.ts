@@ -1,4 +1,4 @@
-import type { FetchResolveContext, XhrCompleteContext } from '@renanvizza-prontmed/browser-core'
+import type { FetchResolveContext, XhrCompleteContext } from '@openobserve/browser-core'
 import {
   ErrorSource,
   initXhrObservable,
@@ -11,7 +11,7 @@ import {
   readBytesFromStream,
   tryToClone,
   isServerError,
-} from '@renanvizza-prontmed/browser-core'
+} from '@openobserve/browser-core'
 import type { LogsConfiguration } from '../configuration'
 import type { LifeCycle } from '../lifeCycle'
 import { LifeCycleEventType } from '../lifeCycle'

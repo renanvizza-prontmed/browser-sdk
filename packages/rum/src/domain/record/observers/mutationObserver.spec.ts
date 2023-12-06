@@ -1,6 +1,6 @@
-import { DefaultPrivacyLevel, isIE } from '@renanvizza-prontmed/browser-core'
-import type { RumConfiguration } from '@renanvizza-prontmed/browser-rum-core'
-import { collectAsyncCalls } from '@renanvizza-prontmed/browser-core/test'
+import { DefaultPrivacyLevel, isIE } from '@openobserve/browser-core'
+import type { RumConfiguration } from '@openobserve/browser-rum-core'
+import { collectAsyncCalls } from '@openobserve/browser-core/test'
 import { createMutationPayloadValidator } from '../../../../test'
 import {
   NodePrivacyLevel,

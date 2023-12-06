@@ -1,5 +1,5 @@
-import type { RelativeTime } from '@renanvizza-prontmed/browser-core'
-import { ONE_MINUTE, find } from '@renanvizza-prontmed/browser-core'
+import type { RelativeTime } from '@openobserve/browser-core'
+import { ONE_MINUTE, find } from '@openobserve/browser-core'
 import type { LifeCycle } from '../../lifeCycle'
 import { LifeCycleEventType } from '../../lifeCycle'
 import type { RumPerformancePaintTiming } from '../../../browser/performanceCollection'

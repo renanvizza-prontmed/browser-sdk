@@ -1,5 +1,5 @@
-import type { RelativeTime } from '@renanvizza-prontmed/browser-core'
-import { relativeToClocks } from '@renanvizza-prontmed/browser-core'
+import type { RelativeTime } from '@openobserve/browser-core'
+import { relativeToClocks } from '@openobserve/browser-core'
 import type { TestSetupBuilder } from '../../../test'
 import { setup } from '../../../test'
 import { LifeCycleEventType } from '../lifeCycle'

@@ -1,4 +1,4 @@
-import type { Context, RawError, EventRateLimiter, User } from '@renanvizza-prontmed/browser-core'
+import type { Context, RawError, EventRateLimiter, User } from '@openobserve/browser-core'
 import {
   combine,
   isEmptyObject,
@@ -9,7 +9,7 @@ import {
   canUseEventBridge,
   assign,
   round,
-} from '@renanvizza-prontmed/browser-core'
+} from '@openobserve/browser-core'
 import type { RumEventDomainContext } from '../domainContext.types'
 import type {
   RawRumErrorEvent,

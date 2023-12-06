@@ -1,4 +1,4 @@
-import { defineGlobal, getGlobalObject } from '@renanvizza-prontmed/browser-core'
+import { defineGlobal, getGlobalObject } from '@openobserve/browser-core'
 import type { LogsPublicApi } from '../boot/logsPublicApi'
 import { makeLogsPublicApi } from '../boot/logsPublicApi'
 import { startLogs } from '../boot/startLogs'

@@ -1,4 +1,4 @@
-import type { Context, RelativeTime, TelemetryEvent, TimeStamp } from '@renanvizza-prontmed/browser-core'
+import type { Context, RelativeTime, TelemetryEvent, TimeStamp } from '@openobserve/browser-core'
 import {
   Observable,
   TelemetryService,
@@ -7,9 +7,9 @@ import {
   ONE_MINUTE,
   getTimeStamp,
   noop,
-} from '@renanvizza-prontmed/browser-core'
-import type { Clock } from '@renanvizza-prontmed/browser-core/test'
-import { mockClock, cleanupSyntheticsWorkerValues, mockSyntheticsWorkerValues } from '@renanvizza-prontmed/browser-core/test'
+} from '@openobserve/browser-core'
+import type { Clock } from '@openobserve/browser-core/test'
+import { mockClock, cleanupSyntheticsWorkerValues, mockSyntheticsWorkerValues } from '@openobserve/browser-core/test'
 import type { LogsEvent } from '../logsEvent.types'
 import type { CommonContext } from '../rawLogsEvent.types'
 import { getRUMInternalContext, resetRUMInternalContext, startLogsAssembly } from './assembly'

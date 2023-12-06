@@ -1,4 +1,4 @@
-import type { Observable, RawError, Duration, RelativeTime } from '@renanvizza-prontmed/browser-core'
+import type { Observable, RawError, Duration, RelativeTime } from '@openobserve/browser-core'
 import {
   CustomerDataType,
   createContextManager,
@@ -10,13 +10,13 @@ import {
   isIE,
   relativeNow,
   createIdentityEncoder,
-} from '@renanvizza-prontmed/browser-core'
+} from '@openobserve/browser-core'
 import {
   createNewEvent,
   interceptRequests,
   initEventBridgeStub,
   deleteEventBridgeStub,
-} from '@renanvizza-prontmed/browser-core/test'
+} from '@openobserve/browser-core/test'
 import type { RumSessionManagerMock, TestSetupBuilder } from '../../test'
 import { createPerformanceEntry, createRumSessionManagerMock, noopRecorderApi, setup } from '../../test'
 import { RumPerformanceEntryType } from '../browser/performanceCollection'

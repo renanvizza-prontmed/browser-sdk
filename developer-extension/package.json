@@ -1,5 +1,5 @@
 {
-  "name": "@renanvizza-prontmed/browser-sdk-developer-extension",
+  "name": "@openobserve/browser-sdk-developer-extension",
   "version": "0.3.0",
   "private": true,
   "scripts": {
@@ -20,8 +20,8 @@
   "dependencies": {
     "@mantine/core": "7.2.2",
     "@mantine/hooks": "7.2.2",
-    "@renanvizza-prontmed/browser-logs": "workspace:*",
-    "@renanvizza-prontmed/browser-rum": "workspace:*",
+    "@openobserve/browser-logs": "workspace:*",
+    "@openobserve/browser-rum": "workspace:*",
     "clsx": "2.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"

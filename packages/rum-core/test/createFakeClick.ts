@@ -1,5 +1,5 @@
-import { clocksNow, Observable, timeStampNow } from '@renanvizza-prontmed/browser-core'
-import { createNewEvent } from '@renanvizza-prontmed/browser-core/test'
+import { clocksNow, Observable, timeStampNow } from '@openobserve/browser-core'
+import { createNewEvent } from '@openobserve/browser-core/test'
 import type { Click } from '../src/domain/action/trackClickActions'
 
 export type FakeClick = Readonly<ReturnType<typeof createFakeClick>>

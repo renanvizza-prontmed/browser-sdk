@@ -1,4 +1,4 @@
-import { isIE } from '@renanvizza-prontmed/browser-core'
+import { isIE } from '@openobserve/browser-core'
 import {
   NodePrivacyLevel,
   PRIVACY_ATTR_NAME,

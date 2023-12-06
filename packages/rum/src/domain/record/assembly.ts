@@ -1,4 +1,4 @@
-import { assign, timeStampNow } from '@renanvizza-prontmed/browser-core'
+import { assign, timeStampNow } from '@openobserve/browser-core'
 import type { BrowserIncrementalData, BrowserIncrementalSnapshotRecord } from '../../types'
 import { RecordType } from '../../types'
 

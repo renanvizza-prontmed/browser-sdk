@@ -1,4 +1,4 @@
-import type { Context, ContextManager, User } from '@renanvizza-prontmed/browser-core'
+import type { Context, ContextManager, User } from '@openobserve/browser-core'
 import type { RecorderApi } from '../../boot/rumPublicApi'
 
 export interface CommonContext {

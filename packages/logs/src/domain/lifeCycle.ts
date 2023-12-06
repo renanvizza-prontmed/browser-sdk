@@ -1,5 +1,5 @@
-import { AbstractLifeCycle } from '@renanvizza-prontmed/browser-core'
-import type { Context } from '@renanvizza-prontmed/browser-core'
+import { AbstractLifeCycle } from '@openobserve/browser-core'
+import type { Context } from '@openobserve/browser-core'
 import type { LogsEvent } from '../logsEvent.types'
 import type { CommonContext, RawLogsEvent } from '../rawLogsEvent.types'
 

@@ -1,8 +1,8 @@
-import type { LogsEvent } from '@renanvizza-prontmed/browser-logs'
-import type { RumEvent, RumActionEvent, RumErrorEvent, RumResourceEvent, RumViewEvent } from '@renanvizza-prontmed/browser-rum'
-import type { TelemetryEvent, TelemetryErrorEvent, TelemetryConfigurationEvent } from '@renanvizza-prontmed/browser-core'
-import type { BrowserSegment } from '@renanvizza-prontmed/browser-rum/src/types'
-import type { BrowserSegmentMetadataAndSegmentSizes } from '@renanvizza-prontmed/browser-rum/src/domain/segmentCollection'
+import type { LogsEvent } from '@openobserve/browser-logs'
+import type { RumEvent, RumActionEvent, RumErrorEvent, RumResourceEvent, RumViewEvent } from '@openobserve/browser-rum'
+import type { TelemetryEvent, TelemetryErrorEvent, TelemetryConfigurationEvent } from '@openobserve/browser-core'
+import type { BrowserSegment } from '@openobserve/browser-rum/src/types'
+import type { BrowserSegmentMetadataAndSegmentSizes } from '@openobserve/browser-rum/src/domain/segmentCollection'
 
 type BaseIntakeRequest = {
   isBridge: boolean

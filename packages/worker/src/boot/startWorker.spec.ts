@@ -1,4 +1,4 @@
-import type { DeflateWorkerAction, DeflateWorkerResponse } from '@renanvizza-prontmed/browser-core'
+import type { DeflateWorkerAction, DeflateWorkerResponse } from '@openobserve/browser-core'
 import type { WorkerScope } from './startWorker'
 import { startWorker } from './startWorker'
 

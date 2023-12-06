@@ -1,4 +1,4 @@
-import type { RelativeTime, TimeStamp, Context, DeflateWorker } from '@renanvizza-prontmed/browser-core'
+import type { RelativeTime, TimeStamp, Context, DeflateWorker } from '@openobserve/browser-core'
 import {
   ONE_SECOND,
   getTimeStamp,
@@ -8,13 +8,13 @@ import {
   noop,
   resetExperimentalFeatures,
   createIdentityEncoder,
-} from '@renanvizza-prontmed/browser-core'
+} from '@openobserve/browser-core'
 import {
   initEventBridgeStub,
   deleteEventBridgeStub,
   cleanupSyntheticsWorkerValues,
   mockSyntheticsWorkerValues,
-} from '@renanvizza-prontmed/browser-core/test'
+} from '@openobserve/browser-core/test'
 import type { TestSetupBuilder } from '../../test'
 import { setup, noopRecorderApi } from '../../test'
 import type { HybridInitConfiguration, RumInitConfiguration } from '../domain/configuration'

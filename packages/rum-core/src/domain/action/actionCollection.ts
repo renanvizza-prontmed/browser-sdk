@@ -1,5 +1,5 @@
-import type { ClocksState, Context, Observable } from '@renanvizza-prontmed/browser-core'
-import { noop, assign, combine, toServerDuration, generateUUID } from '@renanvizza-prontmed/browser-core'
+import type { ClocksState, Context, Observable } from '@openobserve/browser-core'
+import { noop, assign, combine, toServerDuration, generateUUID } from '@openobserve/browser-core'
 
 import type { RawRumActionEvent } from '../../rawRumEvent.types'
 import { ActionType, RumEventType } from '../../rawRumEvent.types'

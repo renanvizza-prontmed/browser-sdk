@@ -1,4 +1,4 @@
-import type { Duration, RelativeTime, ServerDuration, TimeStamp } from '@renanvizza-prontmed/browser-core'
+import type { Duration, RelativeTime, ServerDuration, TimeStamp } from '@openobserve/browser-core'
 import {
   resetExperimentalFeatures,
   addExperimentalFeatures,
@@ -6,7 +6,7 @@ import {
   RequestType,
   ResourceType,
   ExperimentalFeature,
-} from '@renanvizza-prontmed/browser-core'
+} from '@openobserve/browser-core'
 import type { RumFetchResourceEventDomainContext } from '../../domainContext.types'
 import { setup, createRumSessionManagerMock, createPerformanceEntry } from '../../../test'
 import type { TestSetupBuilder } from '../../../test'

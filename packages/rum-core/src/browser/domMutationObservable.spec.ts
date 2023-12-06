@@ -1,5 +1,5 @@
-import { isIE } from '@renanvizza-prontmed/browser-core'
-import { stubZoneJs } from '@renanvizza-prontmed/browser-core/test'
+import { isIE } from '@openobserve/browser-core'
+import { stubZoneJs } from '@openobserve/browser-core/test'
 import { createDOMMutationObservable, getMutationObserverConstructor } from './domMutationObservable'
 
 // The MutationObserver invokes its callback in an event loop microtask, making this asynchronous.

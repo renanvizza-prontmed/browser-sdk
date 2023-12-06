@@ -1,5 +1,5 @@
-import type { Duration, ServerDuration, Observable } from '@renanvizza-prontmed/browser-core'
-import { isEmptyObject, mapValues, toServerDuration, isNumber } from '@renanvizza-prontmed/browser-core'
+import type { Duration, ServerDuration, Observable } from '@openobserve/browser-core'
+import { isEmptyObject, mapValues, toServerDuration, isNumber } from '@openobserve/browser-core'
 import type { RecorderApi } from '../../boot/rumPublicApi'
 import type { RawRumViewEvent } from '../../rawRumEvent.types'
 import { RumEventType } from '../../rawRumEvent.types'

@@ -1,5 +1,5 @@
-import type { Duration, RelativeTime, ServerDuration } from '@renanvizza-prontmed/browser-core'
-import { SPEC_ENDPOINTS } from '@renanvizza-prontmed/browser-core/test'
+import type { Duration, RelativeTime, ServerDuration } from '@openobserve/browser-core'
+import { SPEC_ENDPOINTS } from '@openobserve/browser-core/test'
 import { RumPerformanceEntryType, type RumPerformanceResourceTiming } from '../../browser/performanceCollection'
 import type { RumConfiguration } from '../configuration'
 import { validateAndBuildRumConfiguration } from '../configuration'

@@ -1,5 +1,5 @@
-import type { Payload } from '@renanvizza-prontmed/browser-core'
-import { assign } from '@renanvizza-prontmed/browser-core'
+import type { Payload } from '@openobserve/browser-core'
+import { assign } from '@openobserve/browser-core'
 import type { BrowserSegmentMetadata } from '../../types'
 
 export type BrowserSegmentMetadataAndSegmentSizes = BrowserSegmentMetadata & {
