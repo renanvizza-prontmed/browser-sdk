@@ -1,4 +1,4 @@
-import type { Context, Duration, RelativeTime, ServerDuration, TimeStamp } from '@datadog/browser-core'
+import type { Context, Duration, RelativeTime, ServerDuration, TimeStamp } from '@openobserve/browser-core'
 import {
   assign,
   combine,
@@ -7,7 +7,7 @@ import {
   generateUUID,
   relativeNow,
   ResourceType,
-} from '@datadog/browser-core'
+} from '@openobserve/browser-core'
 import { RumPerformanceEntryType } from '../src/browser/performanceCollection'
 import type {
   RumFirstInputTiming,
@@ -48,7 +48,7 @@ export function createRawRumEvent(type: RumEventType, overrides?: Context): RawR
             id: generateUUID(),
             duration: 0 as ServerDuration,
           },
-          _dd: {
+          _oo: {
             discarded: false,
           },
         },
@@ -81,7 +81,7 @@ export function createRawRumEvent(type: RumEventType, overrides?: Context): RawR
             type: ResourceType.OTHER,
             url: 'http://foo.bar',
           },
-          _dd: {
+          _oo: {
             discarded: false,
           },
         },
@@ -91,7 +91,7 @@ export function createRawRumEvent(type: RumEventType, overrides?: Context): RawR
       return combine(
         {
           type,
-          _dd: {
+          _oo: {
             document_version: 0,
             configuration: {
               start_session_replay_recording_manually: false,

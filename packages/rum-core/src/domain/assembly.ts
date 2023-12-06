@@ -1,4 +1,4 @@
-import type { Context, RawError, EventRateLimiter, User } from '@datadog/browser-core'
+import type { Context, RawError, EventRateLimiter, User } from '@openobserve/browser-core'
 import {
   combine,
   isEmptyObject,
@@ -9,7 +9,7 @@ import {
   canUseEventBridge,
   assign,
   round,
-} from '@datadog/browser-core'
+} from '@openobserve/browser-core'
 import type { RumEventDomainContext } from '../domainContext.types'
 import type {
   RawRumErrorEvent,
@@ -123,7 +123,7 @@ export function startRumAssembly(
         const actionId = actionContexts.findActionId(startTime)
 
         const rumContext: RumContext = {
-          _dd: {
+          _oo: {
             format_version: 2,
             drift: currentDrift(),
             configuration: {

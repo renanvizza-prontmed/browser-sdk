@@ -8,7 +8,7 @@ import {
   getType,
   isMatchOption,
   matchList,
-} from '@datadog/browser-core'
+} from '@openobserve/browser-core'
 import type { RumConfiguration } from '../configuration'
 import type {
   RumFetchResolveContext,
@@ -148,10 +148,10 @@ function makeTracingHeaders(
     switch (propagatorType) {
       case 'datadog': {
         assign(tracingHeaders, {
-          'x-datadog-origin': 'rum',
-          'x-datadog-parent-id': spanId.toDecimalString(),
-          'x-datadog-sampling-priority': traceSampled ? '1' : '0',
-          'x-datadog-trace-id': traceId.toDecimalString(),
+          'x-openobserve-origin': 'rum',
+          'x-openobserve-parent-id': spanId.toDecimalString(),
+          'x-openobserve-sampling-priority': traceSampled ? '1' : '0',
+          'x-openobserve-trace-id': traceId.toDecimalString(),
         })
         break
       }

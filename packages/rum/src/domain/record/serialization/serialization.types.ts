@@ -1,4 +1,4 @@
-import type { RumConfiguration } from '@datadog/browser-rum-core'
+import type { RumConfiguration } from '@openobserve/browser-rum-core'
 import type { NodePrivacyLevel } from '../../../constants'
 import type { ElementsScrollPositions } from '../elementsScrollPositions'
 import type { ShadowRootsController } from '../shadowRootsController'

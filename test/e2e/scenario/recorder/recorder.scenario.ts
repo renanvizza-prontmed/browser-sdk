@@ -1,9 +1,9 @@
-import type { InputData, StyleSheetRuleData, BrowserSegment, ScrollData } from '@datadog/browser-rum/src/types'
-import { NodeType, IncrementalSource, MouseInteractionType } from '@datadog/browser-rum/src/types'
+import type { InputData, StyleSheetRuleData, BrowserSegment, ScrollData } from '@openobserve/browser-rum/src/types'
+import { NodeType, IncrementalSource, MouseInteractionType } from '@openobserve/browser-rum/src/types'
 
 // Import from src to have properties of const enums
-import { FrustrationType } from '@datadog/browser-rum-core/src/rawRumEvent.types'
-import { DefaultPrivacyLevel } from '@datadog/browser-rum'
+import { FrustrationType } from '@openobserve/browser-rum-core/src/rawRumEvent.types'
+import { DefaultPrivacyLevel } from '@openobserve/browser-rum'
 
 import {
   findElement,
@@ -17,7 +17,7 @@ import {
   findAllFrustrationRecords,
   findMouseInteractionRecords,
   findElementWithTagName,
-} from '@datadog/browser-rum/test'
+} from '@openobserve/browser-rum/test'
 import { flushEvents, createTest, bundleSetup, html } from '../../lib/framework'
 import { browserExecute, browserExecuteAsync } from '../../lib/helpers/browser'
 
@@ -83,10 +83,10 @@ describe('recorder', () => {
       .withSetup(bundleSetup)
       .withBody(html`
         <div id="not-obfuscated">displayed</div>
-        <p id="hidden-by-attribute" data-dd-privacy="hidden">hidden</p>
-        <span id="hidden-by-classname" class="dd-privacy-hidden">hidden</span>
+        <p id="hidden-by-attribute" data-oo-privacy="hidden">hidden</p>
+        <span id="hidden-by-classname" class="oo-privacy-hidden">hidden</span>
         <input id="input-not-obfuscated" value="displayed" />
-        <input id="input-masked" data-dd-privacy="mask" value="masked" />
+        <input id="input-masked" data-oo-privacy="mask" value="masked" />
       `)
       .run(async ({ intakeRegistry }) => {
         await flushEvents()
@@ -101,13 +101,13 @@ describe('recorder', () => {
 
         const hiddenNodeByAttribute = findElement(fullSnapshot.data.node, (node) => node.tagName === 'p')
         expect(hiddenNodeByAttribute).toBeTruthy()
-        expect(hiddenNodeByAttribute!.attributes['data-dd-privacy']).toBe('hidden')
+        expect(hiddenNodeByAttribute!.attributes['data-oo-privacy']).toBe('hidden')
         expect(hiddenNodeByAttribute!.childNodes.length).toBe(0)
 
         const hiddenNodeByClassName = findElement(fullSnapshot.data.node, (node) => node.tagName === 'span')
         expect(hiddenNodeByClassName).toBeTruthy()
         expect(hiddenNodeByClassName!.attributes.class).toBeUndefined()
-        expect(hiddenNodeByClassName!.attributes['data-dd-privacy']).toBe('hidden')
+        expect(hiddenNodeByClassName!.attributes['data-oo-privacy']).toBe('hidden')
         expect(hiddenNodeByClassName!.childNodes.length).toBe(0)
 
         const inputIgnored = findElementWithIdAttribute(fullSnapshot.data.node, 'input-not-obfuscated')
@@ -263,7 +263,7 @@ describe('recorder', () => {
       .withRum()
       .withSetup(bundleSetup)
       .withBody(html`
-        <div data-dd-privacy="hidden">
+        <div data-oo-privacy="hidden">
           <ul>
             <li></li>
           </ul>
@@ -524,8 +524,8 @@ describe('recorder', () => {
       .withSetup(bundleSetup)
       .withBody(html`
         <input type="text" id="first" name="first" />
-        <input type="text" id="second" name="second" data-dd-privacy="input-ignored" />
-        <input type="text" id="third" name="third" class="dd-privacy-input-ignored" />
+        <input type="text" id="second" name="second" data-oo-privacy="input-ignored" />
+        <input type="text" id="third" name="third" class="oo-privacy-input-ignored" />
         <input type="password" id="fourth" name="fourth" />
       `)
       .run(async ({ intakeRegistry }) => {
@@ -557,8 +557,8 @@ describe('recorder', () => {
       .withRum()
       .withSetup(bundleSetup)
       .withBody(html`
-        <input type="text" id="by-data-attribute" data-dd-privacy="mask" />
-        <input type="text" id="by-classname" class="dd-privacy-mask" />
+        <input type="text" id="by-data-attribute" data-oo-privacy="mask" />
+        <input type="text" id="by-classname" class="oo-privacy-mask" />
       `)
       .run(async ({ intakeRegistry }) => {
         const firstInput = await $('#by-data-attribute')
@@ -768,7 +768,7 @@ describe('recorder', () => {
         await scroll({ windowY: 100, containerX: 10 })
 
         await browserExecute(() => {
-          window.DD_RUM!.startSessionReplayRecording()
+          window.OO_RUM!.startSessionReplayRecording()
         })
 
         // wait for recorder to be properly started
@@ -779,7 +779,7 @@ describe('recorder', () => {
 
         // trigger new full snapshot
         await browserExecute(() => {
-          window.DD_RUM!.startView()
+          window.OO_RUM!.startView()
         })
 
         await flushEvents()

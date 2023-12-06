@@ -7,16 +7,16 @@
     "compat:ssr": "webpack --mode=development && node dist/app.js"
   },
   "dependencies": {
-    "@datadog/browser-core": "portal:../../packages/core",
-    "@datadog/browser-logs": "portal:../../packages/logs",
-    "@datadog/browser-rum": "portal:../../packages/rum",
-    "@datadog/browser-rum-core": "portal:../../packages/rum-core"
+    "@openobserve/browser-core": "portal:../../packages/core",
+    "@openobserve/browser-logs": "portal:../../packages/logs",
+    "@openobserve/browser-rum": "portal:../../packages/rum",
+    "@openobserve/browser-rum-core": "portal:../../packages/rum-core"
   },
   "resolutions": {
-    "@datadog/browser-core": "portal:../../packages/core",
-    "@datadog/browser-rum-core": "portal:../../packages/rum-core",
-    "@datadog/browser-rum": "portal:../../packages/rum",
-    "@datadog/browser-worker": "portal:../../packages/worker"
+    "@openobserve/browser-core": "portal:../../packages/core",
+    "@openobserve/browser-rum-core": "portal:../../packages/rum-core",
+    "@openobserve/browser-rum": "portal:../../packages/rum",
+    "@openobserve/browser-worker": "portal:../../packages/worker"
   },
   "devDependencies": {
     "ts-loader": "6.2.1",

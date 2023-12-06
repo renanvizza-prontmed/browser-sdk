@@ -1,4 +1,4 @@
-import type { RumErrorEvent } from '@datadog/browser-rum-core'
+import type { RumErrorEvent } from '@openobserve/browser-rum-core'
 import { createTest, flushEvents, html } from '../../lib/framework'
 import { withBrowserLogs } from '../../lib/helpers/browser'
 
@@ -103,7 +103,7 @@ describe('rum errors', () => {
 
   createTest('send custom errors')
     .withRum()
-    .withBody(createBody('DD_RUM.addError(foo())'))
+    .withBody(createBody('OO_RUM.addError(foo())'))
     .run(async ({ intakeRegistry, baseUrl }) => {
       const button = await $('button')
       await button.click()

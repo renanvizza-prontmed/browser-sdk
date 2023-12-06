@@ -1,4 +1,4 @@
-import type { RelativeTime, ServerDuration } from '@datadog/browser-core'
+import type { RelativeTime, ServerDuration } from '@openobserve/browser-core'
 import type { RumSessionManagerMock, TestSetupBuilder } from '../../../test'
 import { createPerformanceEntry, createRumSessionManagerMock, setup } from '../../../test'
 import { RumPerformanceEntryType, type RumPerformanceEntry } from '../../browser/performanceCollection'
@@ -71,7 +71,7 @@ describe('long task collection', () => {
         duration: (100 * 1e6) as ServerDuration,
       },
       type: RumEventType.LONG_TASK,
-      _dd: {
+      _oo: {
         discarded: false,
       },
     })

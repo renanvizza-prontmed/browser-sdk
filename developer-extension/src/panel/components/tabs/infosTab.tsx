@@ -38,7 +38,7 @@ export function InfosTab() {
               <Entry name="Created" value={formatDate(Number(infos.cookie.created))} />
               <Entry name="Expire" value={formatDate(Number(infos.cookie.expire))} />
               <Space h="sm" />
-              <Button color="violet" variant="light" onClick={endSession} className="dd-privacy-allow">
+              <Button color="violet" variant="light" onClick={endSession} className="oo-privacy-allow">
                 End current session
               </Button>
             </>
@@ -48,7 +48,7 @@ export function InfosTab() {
           {infos.rum && (
             <>
               {sessionId && (
-                <Group className="dd-privacy-allow">
+                <Group className="oo-privacy-allow">
                   <AppLink
                     config={infos.rum.config}
                     path="rum/explorer"
@@ -77,7 +77,7 @@ export function InfosTab() {
           {infos.logs && (
             <>
               {sessionId && (
-                <div className="dd-privacy-allow">
+                <div className="oo-privacy-allow">
                   <AppLink
                     config={infos.logs.config}
                     path="logs"
@@ -112,8 +112,8 @@ function AppLink({
   params: { [key: string]: string }
   children: ReactNode
 }) {
-  const site = config?.site ?? 'datadoghq.com'
-  const hostname = site === 'datadoghq.com' ? 'app.datadoghq.com' : site === 'datad0g.com' ? 'dd.datad0g.com' : site
+  const site = config?.site ?? 'api.openobserve.ai'
+  const hostname = site
   return (
     <Anchor href={`https://${hostname}/${path}?${new URLSearchParams(params).toString()}`} target="_blank">
       {children}
@@ -147,7 +147,7 @@ function formatSessionType(value: string, ...labels: string[]) {
 function endSession() {
   evalInWindow(
     `
-      document.cookie = '_dd_s=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'
+      document.cookie = '_oo_s=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'
     `
   ).catch((error) => logger.error('Error while ending session:', error))
 }

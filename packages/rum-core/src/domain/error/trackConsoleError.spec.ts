@@ -1,7 +1,7 @@
-import type { RawError, Subscription } from '@datadog/browser-core'
-import { ErrorHandling, ErrorSource, Observable, clocksNow, resetConsoleObservable } from '@datadog/browser-core'
-import type { Clock } from '@datadog/browser-core/test'
-import { mockClock } from '@datadog/browser-core/test'
+import type { RawError, Subscription } from '@openobserve/browser-core'
+import { ErrorHandling, ErrorSource, Observable, clocksNow, resetConsoleObservable } from '@openobserve/browser-core'
+import type { Clock } from '@openobserve/browser-core/test'
+import { mockClock } from '@openobserve/browser-core/test'
 import { trackConsoleError } from './trackConsoleError'
 
 describe('trackConsoleError', () => {

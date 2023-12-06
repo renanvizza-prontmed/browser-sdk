@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Tabs, Text } from '@mantine/core'
-import { datadogRum } from '@datadog/browser-rum'
+import { openobserveRum } from '@openobserve/browser-rum'
 
 import { useEvents } from '../hooks/useEvents'
 import { useAutoFlushEvents } from '../hooks/useAutoFlushEvents'
@@ -28,12 +28,12 @@ export function Panel() {
   const [activeTab, setActiveTab] = useState<string | null>(DEFAULT_PANEL_TAB)
   function updateActiveTab(activeTab: string | null) {
     setActiveTab(activeTab)
-    activeTab && datadogRum.startView(activeTab)
+    activeTab && openobserveRum.startView(activeTab)
   }
 
   return (
     <Tabs color="violet" value={activeTab} className={classes.tabs} onChange={updateActiveTab}>
-      <Tabs.List className="dd-privacy-allow">
+      <Tabs.List className="oo-privacy-allow">
         <Tabs.Tab value={PanelTabs.Events}>Events</Tabs.Tab>
         <Tabs.Tab value={PanelTabs.Infos}>
           <Text>Infos</Text>

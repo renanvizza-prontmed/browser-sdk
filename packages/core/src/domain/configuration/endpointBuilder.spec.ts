@@ -24,7 +24,7 @@ describe('endpointBuilder', () => {
   describe('query parameters', () => {
     it('should add intake query parameters', () => {
       expect(createEndpointBuilder(initConfiguration, 'rum', []).build('xhr', DEFAULT_PAYLOAD)).toMatch(
-        `&dd-api-key=${clientToken}&dd-evp-origin-version=(.*)&dd-evp-origin=browser&dd-request-id=(.*)`
+        `&o2-api-key=${clientToken}&o2-evp-origin-version=(.*)&o2-evp-origin=browser&o2-request-id=(.*)`
       )
     })
 
@@ -46,30 +46,30 @@ describe('endpointBuilder', () => {
     it('should add the provided encoding', () => {
       expect(
         createEndpointBuilder(initConfiguration, 'rum', []).build('xhr', { ...DEFAULT_PAYLOAD, encoding: 'deflate' })
-      ).toContain('&dd-evp-encoding=deflate')
+      ).toContain('&oo-evp-encoding=deflate')
     })
 
-    it('should not start with ddsource for internal analytics mode', () => {
+    it('should not start with o2source for internal analytics mode', () => {
       const url = createEndpointBuilder({ ...initConfiguration, internalAnalyticsSubdomain: 'foo' }, 'rum', []).build(
         'xhr',
         DEFAULT_PAYLOAD
       )
-      expect(url).not.toContain('/rum?ddsource')
-      expect(url).toContain('ddsource=browser')
+      expect(url).not.toContain('/rum?o2source')
+      expect(url).toContain('o2source=browser')
     })
   })
 
   describe('proxy configuration', () => {
-    it('should replace the intake endpoint by the proxy and set the intake path and parameters in the attribute ddforward', () => {
+    it('should replace the intake endpoint by the proxy and set the intake path and parameters in the attribute ooforward', () => {
       expect(
-        createEndpointBuilder({ ...initConfiguration, proxy: 'https://proxy.io/path' }, 'rum', []).build(
+        createEndpointBuilder({ ...initConfiguration, proxy: 'https://proxy.io/path', apiVersion: 'v2', organizationIdentifier: 'xyz' }, 'rum', []).build(
           'xhr',
           DEFAULT_PAYLOAD
         )
       ).toMatch(
-        `https://proxy.io/path\\?ddforward=${encodeURIComponent(
-          `/api/v2/rum?ddsource=(.*)&ddtags=(.*)&dd-api-key=${clientToken}` +
-            '&dd-evp-origin-version=(.*)&dd-evp-origin=browser&dd-request-id=(.*)&batch_time=(.*)'
+        `https://proxy.io/path\\?ooforward=${encodeURIComponent(
+          `/rum/v2/xyz/rum?o2source=(.*)&o2tags=(.*)&o2-api-key=${clientToken}` +
+            '&o2-evp-origin-version=(.*)&o2-evp-origin=browser&o2-request-id=(.*)&batch_time=(.*)'
         )}`
       )
     })
@@ -78,7 +78,7 @@ describe('endpointBuilder', () => {
       expect(
         startsWith(
           createEndpointBuilder({ ...initConfiguration, proxy: '/path' }, 'rum', []).build('xhr', DEFAULT_PAYLOAD),
-          `${location.origin}/path?ddforward`
+          `${location.origin}/path?ooforward`
         )
       ).toBeTrue()
     })
@@ -87,9 +87,9 @@ describe('endpointBuilder', () => {
       const proxyFn = (options: { path: string; parameters: string }) =>
         `https://proxy.io/prefix${options.path}/suffix?${options.parameters}`
       expect(
-        createEndpointBuilder({ ...initConfiguration, proxy: proxyFn }, 'rum', []).build('xhr', DEFAULT_PAYLOAD)
+        createEndpointBuilder({ ...initConfiguration, proxy: proxyFn, apiVersion: 'v2', organizationIdentifier: 'xyz' }, 'rum', []).build('xhr', DEFAULT_PAYLOAD)
       ).toMatch(
-        `https://proxy.io/prefix/api/v2/rum/suffix\\?ddsource=(.*)&ddtags=(.*)&dd-api-key=${clientToken}&dd-evp-origin-version=(.*)&dd-evp-origin=browser&dd-request-id=(.*)&batch_time=(.*)`
+        `https://proxy.io/prefix/rum/v2/xyz/rum/suffix\\?o2source=(.*)&o2tags=(.*)&o2-api-key=${clientToken}&o2-evp-origin-version=(.*)&o2-evp-origin=browser&o2-request-id=(.*)&batch_time=(.*)`
       )
     })
   })

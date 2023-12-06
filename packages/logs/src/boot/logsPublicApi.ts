@@ -1,4 +1,4 @@
-import type { Context, InitConfiguration, User } from '@datadog/browser-core'
+import type { Context, InitConfiguration, User } from '@openobserve/browser-core'
 import {
   CustomerDataType,
   assign,
@@ -15,7 +15,7 @@ import {
   sanitize,
   createStoredContextManager,
   combine,
-} from '@datadog/browser-core'
+} from '@openobserve/browser-core'
 import type { LogsInitConfiguration } from '../domain/configuration'
 import { validateAndBuildLogsConfiguration } from '../domain/configuration'
 import type { HandlerType, StatusType, LogsMessage } from '../domain/logger'
@@ -173,7 +173,7 @@ export function makeLogsPublicApi(startLogsImpl: StartLogs) {
   function canInitLogs(initConfiguration: LogsInitConfiguration) {
     if (isAlreadyInitialized) {
       if (!initConfiguration.silentMultipleInit) {
-        display.error('DD_LOGS is already initialized.')
+        display.error('OO_LOGS is already initialized.')
       }
       return false
     }

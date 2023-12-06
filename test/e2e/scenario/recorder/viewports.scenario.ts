@@ -1,7 +1,7 @@
-import type { ViewportResizeData, ScrollData } from '@datadog/browser-rum/cjs/types'
-import { IncrementalSource } from '@datadog/browser-rum/cjs/types'
+import type { ViewportResizeData, ScrollData } from '@openobserve/browser-rum/cjs/types'
+import { IncrementalSource } from '@openobserve/browser-rum/cjs/types'
 
-import { findAllIncrementalSnapshots, findAllVisualViewports } from '@datadog/browser-rum/test'
+import { findAllIncrementalSnapshots, findAllVisualViewports } from '@openobserve/browser-rum/test'
 import type { IntakeRegistry } from '../../lib/framework'
 import { flushEvents, createTest, bundleSetup, html } from '../../lib/framework'
 import { browserExecute, getBrowserName, getPlatformName } from '../../lib/helpers/browser'

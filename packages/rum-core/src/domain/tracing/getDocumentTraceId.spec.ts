@@ -1,4 +1,4 @@
-import type { TimeStamp } from '@datadog/browser-core'
+import type { TimeStamp } from '@openobserve/browser-core'
 import {
   createDocumentTraceData,
   findTraceComment,

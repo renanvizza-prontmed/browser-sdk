@@ -9,8 +9,8 @@ import {
   isNumber,
   isExperimentalFeatureEnabled,
   ExperimentalFeature,
-} from '@datadog/browser-core'
-import type { ClocksState, Duration } from '@datadog/browser-core'
+} from '@openobserve/browser-core'
+import type { ClocksState, Duration } from '@openobserve/browser-core'
 import type { RumConfiguration } from '../configuration'
 import type { RumPerformanceResourceTiming } from '../../browser/performanceCollection'
 import { RumPerformanceEntryType } from '../../browser/performanceCollection'
@@ -94,7 +94,7 @@ function processRequest(
         url: request.url,
       },
       type: RumEventType.RESOURCE as const,
-      _dd: {
+      _oo: {
         discarded: !shouldIndex,
       },
     },
@@ -144,7 +144,7 @@ function processResourceEntry(
         url: entry.name,
       },
       type: RumEventType.RESOURCE as const,
-      _dd: {
+      _oo: {
         discarded: !shouldIndex,
       },
     },
@@ -187,7 +187,7 @@ function computeRequestTracingInfo(request: RequestCompleteEvent, configuration:
     return undefined
   }
   return {
-    _dd: {
+    _oo: {
       span_id: request.spanId!.toDecimalString(),
       trace_id: request.traceId!.toDecimalString(),
       rule_psr: getRulePsr(configuration),
@@ -201,7 +201,7 @@ function computeEntryTracingInfo(entry: RumPerformanceResourceTiming, configurat
     return undefined
   }
   return {
-    _dd: {
+    _oo: {
       trace_id: entry.traceId,
       rule_psr: getRulePsr(configuration),
     },
@@ -221,7 +221,7 @@ function computePageStateInfo(pageStateHistory: PageStateHistory, startClocks: C
   }
 
   return {
-    _dd: {
+    _oo: {
       page_states: pageStateHistory.findAll(startClocks.relative, duration),
       page_was_discarded: String((document as any).wasDiscarded),
     },

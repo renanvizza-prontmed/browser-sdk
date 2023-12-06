@@ -1,7 +1,7 @@
-import type { Context, ContextManager, TimeStamp } from '@datadog/browser-core'
-import { CustomerDataType, assign, combine, createContextManager, noop, Observable } from '@datadog/browser-core'
-import type { Clock } from '@datadog/browser-core/test'
-import { mockClock, buildLocation, SPEC_ENDPOINTS } from '@datadog/browser-core/test'
+import type { Context, ContextManager, TimeStamp } from '@openobserve/browser-core'
+import { CustomerDataType, assign, combine, createContextManager, noop, Observable } from '@openobserve/browser-core'
+import type { Clock } from '@openobserve/browser-core/test'
+import { mockClock, buildLocation, SPEC_ENDPOINTS } from '@openobserve/browser-core/test'
 import type { LocationChange } from '../src/browser/locationChangeObservable'
 import type { RumConfiguration } from '../src/domain/configuration'
 import { validateAndBuildRumConfiguration } from '../src/domain/configuration'
@@ -221,7 +221,7 @@ export function setup(): TestSetupBuilder {
 function validateRumEventFormat(rawRumEvent: RawRumEvent) {
   const fakeId = '00000000-aaaa-0000-aaaa-000000000000'
   const fakeContext: RumContext = {
-    _dd: {
+    _oo: {
       format_version: 2,
       drift: 0,
       configuration: {

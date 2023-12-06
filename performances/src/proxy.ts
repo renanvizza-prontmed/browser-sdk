@@ -17,7 +17,7 @@ class ProxyStats {
 
   addRequest(request: IncomingMessage, size: number) {
     const url = new URL(request.url!, 'http://foo')
-    const intakeUrl = new URL(url.searchParams.get('ddforward')!)
+    const intakeUrl = new URL(url.searchParams.get('ooforward')!)
 
     let hostStats = this.statsByHost.get(intakeUrl.hostname)
     if (!hostStats) {

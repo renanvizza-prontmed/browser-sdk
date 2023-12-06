@@ -1,5 +1,5 @@
-import type { Duration, RelativeTime } from '@datadog/browser-core'
-import { relativeNow, resetExperimentalFeatures } from '@datadog/browser-core'
+import type { Duration, RelativeTime } from '@openobserve/browser-core'
+import { relativeNow, resetExperimentalFeatures } from '@openobserve/browser-core'
 import type { TestSetupBuilder } from '../../../../test'
 import { appendElement, appendText, createPerformanceEntry, setup } from '../../../../test'
 import { RumPerformanceEntryType } from '../../../browser/performanceCollection'

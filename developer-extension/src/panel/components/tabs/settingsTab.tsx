@@ -16,7 +16,7 @@ export function SettingsTab() {
 
   return (
     <TabBase>
-      <div className="dd-privacy-allow">
+      <div className="oo-privacy-allow">
         <Columns>
           <Columns.Column title="Request interception">
             <SettingItem

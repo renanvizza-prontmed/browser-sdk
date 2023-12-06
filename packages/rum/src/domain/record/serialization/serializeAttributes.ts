@@ -1,4 +1,4 @@
-import { ExperimentalFeature, isExperimentalFeatureEnabled, isSafari } from '@datadog/browser-core'
+import { ExperimentalFeature, isExperimentalFeatureEnabled, isSafari } from '@openobserve/browser-core'
 
 import { NodePrivacyLevel } from '../../../constants'
 import { shouldMaskNode } from '../privacy'

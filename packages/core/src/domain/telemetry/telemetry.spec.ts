@@ -1,4 +1,4 @@
-import type { StackTrace } from '@datadog/browser-core'
+import type { StackTrace } from '@openobserve/browser-core'
 import { NO_ERROR_STACK_PRESENT_MESSAGE } from '../error/error'
 import { callMonitored } from '../../tools/monitor'
 import type { ExperimentalFeature } from '../../tools/experimentalFeatures'
@@ -139,7 +139,6 @@ describe('telemetry', () => {
 
   describe('excluded sites', () => {
     ;[
-      { site: INTAKE_SITE_US1_FED, enabled: false },
       { site: INTAKE_SITE_US1, enabled: true },
     ].forEach(({ site, enabled }) => {
       it(`should be ${enabled ? 'enabled' : 'disabled'} on ${site}`, () => {
@@ -192,10 +191,10 @@ describe('formatError', () => {
 describe('scrubCustomerFrames', () => {
   it('should remove stack trace frames that are related to customer files', () => {
     ;[
-      { scrub: false, url: 'https://www.datadoghq-browser-agent.com/datadog-rum-v4.js' },
-      { scrub: false, url: 'https://www.datad0g-browser-agent.com/datadog-rum-v5.js' },
-      { scrub: false, url: 'https://d3uc069fcn7uxw.cloudfront.net/datadog-logs-staging.js' },
-      { scrub: false, url: 'https://d20xtzwzcl0ceb.cloudfront.net/datadog-rum-canary.js' },
+      { scrub: false, url: 'https://cloud.openobserve.ai/openobserve-rum-v4.js' },
+      { scrub: false, url: 'https://cloud.openobserve.ai/openobserve-rum-v5.js' },
+      { scrub: false, url: 'https://cloud.openobserve.ai/openobserve-logs-staging.js' },
+      { scrub: false, url: 'https://cloud.openobserve.ai/openobserve-rum-canary.js' },
       { scrub: false, url: 'http://localhost/index.html' },
       { scrub: false, url: undefined },
       { scrub: false, url: '<anonymous>' },

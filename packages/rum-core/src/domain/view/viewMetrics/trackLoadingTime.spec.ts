@@ -1,5 +1,5 @@
-import type { RelativeTime, Duration } from '@datadog/browser-core'
-import { addDuration, clocksOrigin } from '@datadog/browser-core'
+import type { RelativeTime, Duration } from '@openobserve/browser-core'
+import { addDuration, clocksOrigin } from '@openobserve/browser-core'
 import { ViewLoadingType } from '../../../rawRumEvent.types'
 import type { TestSetupBuilder } from '../../../../test'
 import { createPerformanceEntry, setup } from '../../../../test'

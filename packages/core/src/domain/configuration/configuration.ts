@@ -53,6 +53,9 @@ export interface InitConfiguration {
   internalAnalyticsSubdomain?: string
 
   telemetryConfigurationSampleRate?: number
+  apiVersion?: string | undefined
+  organizationIdentifier?: string | undefined
+  insecureHTTP?: boolean | undefined
 }
 
 // This type is only used to build the core configuration. Logs and RUM SDKs are using a proper type
@@ -157,6 +160,9 @@ export function validateAndBuildConfiguration(initConfiguration: InitConfigurati
        */
       batchMessagesLimit: 50,
       messageBytesLimit: 256 * ONE_KIBI_BYTE,
+      apiVersion: initConfiguration.apiVersion ?? 'v2',
+      organizationIdentifier: initConfiguration.organizationIdentifier ?? 'default',
+      insecureHTTP: initConfiguration.insecureHTTP ?? false,
     },
     computeTransportConfiguration(initConfiguration)
   )

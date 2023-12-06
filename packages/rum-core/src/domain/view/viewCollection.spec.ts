@@ -1,5 +1,5 @@
-import type { Duration, RelativeTime, ServerDuration, TimeStamp } from '@datadog/browser-core'
-import { resetExperimentalFeatures } from '@datadog/browser-core'
+import type { Duration, RelativeTime, ServerDuration, TimeStamp } from '@openobserve/browser-core'
+import { resetExperimentalFeatures } from '@openobserve/browser-core'
 import type { RecorderApi } from '../../boot/rumPublicApi'
 import type { TestSetupBuilder } from '../../../test'
 import { setup, noopRecorderApi } from '../../../test'
@@ -109,7 +109,7 @@ describe('viewCollection', () => {
 
     expect(rawRumEvents[rawRumEvents.length - 1].startTime).toBe(1234 as RelativeTime)
     expect(rawRumEvents[rawRumEvents.length - 1].rawRumEvent).toEqual({
-      _dd: {
+      _oo: {
         document_version: 3,
         replay_stats: undefined,
         page_states: [
@@ -195,7 +195,7 @@ describe('viewCollection', () => {
     expect(getReplayStatsSpy).toHaveBeenCalledWith(VIEW.id)
     expect(rawRumEvents[rawRumEvents.length - 1].startTime).toBe(1234 as RelativeTime)
     const rawRumViewEvent = rawRumEvents[rawRumEvents.length - 1].rawRumEvent as RawRumViewEvent
-    expect(rawRumViewEvent._dd.replay_stats).toEqual({
+    expect(rawRumViewEvent._oo.replay_stats).toEqual({
       segments_count: 4,
       records_count: 10,
       segments_total_raw_size: 1000,
@@ -239,7 +239,7 @@ describe('viewCollection', () => {
       .build()
     lifeCycle.notify(LifeCycleEventType.VIEW_UPDATED, VIEW)
     expect(
-      (rawRumEvents[rawRumEvents.length - 1].rawRumEvent as RawRumViewEvent)._dd.configuration
+      (rawRumEvents[rawRumEvents.length - 1].rawRumEvent as RawRumViewEvent)._oo.configuration
         .start_session_replay_recording_manually
     ).toBe(false)
 
@@ -249,7 +249,7 @@ describe('viewCollection', () => {
       .build())
     lifeCycle.notify(LifeCycleEventType.VIEW_UPDATED, VIEW)
     expect(
-      (rawRumEvents[rawRumEvents.length - 1].rawRumEvent as RawRumViewEvent)._dd.configuration
+      (rawRumEvents[rawRumEvents.length - 1].rawRumEvent as RawRumViewEvent)._oo.configuration
         .start_session_replay_recording_manually
     ).toBe(true)
   })

@@ -3,9 +3,9 @@ import { getZoneJsOriginalValue } from '../tools/getZoneJsOriginalValue'
 import type { Configuration } from '../domain/configuration'
 import type { VisualViewport, VisualViewportEventMap } from './types'
 
-export type TrustableEvent<E extends Event = Event> = E & { __ddIsTrusted?: boolean }
+export type TrustableEvent<E extends Event = Event> = E & { __ooIsTrusted?: boolean }
 
-// We want to use a real enum (i.e. not a const enum) here, to be able to iterate over it to automatically add _ddIsTrusted in e2e tests
+// We want to use a real enum (i.e. not a const enum) here, to be able to iterate over it to automatically add _ooIsTrusted in e2e tests
 // eslint-disable-next-line no-restricted-syntax
 export enum DOM_EVENT {
   BEFORE_UNLOAD = 'beforeunload',
@@ -117,7 +117,7 @@ export function addEventListeners<Target extends EventTarget, EventName extends 
   { once, capture, passive }: AddEventListenerOptions = {}
 ) {
   const listenerWithMonitor = monitor((event: TrustableEvent) => {
-    if (!event.isTrusted && !event.__ddIsTrusted && !configuration.allowUntrustedEvents) {
+    if (!event.isTrusted && !event.__ooIsTrusted && !configuration.allowUntrustedEvents) {
       return
     }
     if (once) {

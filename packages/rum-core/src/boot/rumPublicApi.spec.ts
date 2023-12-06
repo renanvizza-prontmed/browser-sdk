@@ -1,4 +1,4 @@
-import type { RelativeTime, TimeStamp, Context, DeflateWorker } from '@datadog/browser-core'
+import type { RelativeTime, TimeStamp, Context, DeflateWorker } from '@openobserve/browser-core'
 import {
   ONE_SECOND,
   getTimeStamp,
@@ -8,13 +8,13 @@ import {
   noop,
   resetExperimentalFeatures,
   createIdentityEncoder,
-} from '@datadog/browser-core'
+} from '@openobserve/browser-core'
 import {
   initEventBridgeStub,
   deleteEventBridgeStub,
   cleanupSyntheticsWorkerValues,
   mockSyntheticsWorkerValues,
-} from '@datadog/browser-core/test'
+} from '@openobserve/browser-core/test'
 import type { TestSetupBuilder } from '../../test'
 import { setup, noopRecorderApi } from '../../test'
 import type { HybridInitConfiguration, RumInitConfiguration } from '../domain/configuration'
@@ -1015,11 +1015,11 @@ describe('rum public api', () => {
 
       rumPublicApi.setGlobalContext({ foo: 'bar' })
       expect(rumPublicApi.getGlobalContext()).toEqual({ foo: 'bar' })
-      expect(localStorage.getItem('_dd_c_rum_2')).toBeNull()
+      expect(localStorage.getItem('_oo_c_rum_2')).toBeNull()
 
       rumPublicApi.setUser({ qux: 'qix' })
       expect(rumPublicApi.getUser()).toEqual({ qux: 'qix' })
-      expect(localStorage.getItem('_dd_c_rum_1')).toBeNull()
+      expect(localStorage.getItem('_oo_c_rum_1')).toBeNull()
     })
 
     it('when enabled, should maintain user context in local storage', () => {
@@ -1027,19 +1027,19 @@ describe('rum public api', () => {
 
       rumPublicApi.setUser({ qux: 'qix' })
       expect(rumPublicApi.getUser()).toEqual({ qux: 'qix' })
-      expect(localStorage.getItem('_dd_c_rum_1')).toBe('{"qux":"qix"}')
+      expect(localStorage.getItem('_oo_c_rum_1')).toBe('{"qux":"qix"}')
 
       rumPublicApi.setUserProperty('foo', 'bar')
       expect(rumPublicApi.getUser()).toEqual({ qux: 'qix', foo: 'bar' })
-      expect(localStorage.getItem('_dd_c_rum_1')).toBe('{"qux":"qix","foo":"bar"}')
+      expect(localStorage.getItem('_oo_c_rum_1')).toBe('{"qux":"qix","foo":"bar"}')
 
       rumPublicApi.removeUserProperty('foo')
       expect(rumPublicApi.getUser()).toEqual({ qux: 'qix' })
-      expect(localStorage.getItem('_dd_c_rum_1')).toBe('{"qux":"qix"}')
+      expect(localStorage.getItem('_oo_c_rum_1')).toBe('{"qux":"qix"}')
 
       rumPublicApi.clearUser()
       expect(rumPublicApi.getUser()).toEqual({})
-      expect(localStorage.getItem('_dd_c_rum_1')).toBe('{}')
+      expect(localStorage.getItem('_oo_c_rum_1')).toBe('{}')
     })
 
     it('when enabled, should maintain global context in local storage', () => {
@@ -1047,25 +1047,25 @@ describe('rum public api', () => {
 
       rumPublicApi.setGlobalContext({ qux: 'qix' })
       expect(rumPublicApi.getGlobalContext()).toEqual({ qux: 'qix' })
-      expect(localStorage.getItem('_dd_c_rum_2')).toBe('{"qux":"qix"}')
+      expect(localStorage.getItem('_oo_c_rum_2')).toBe('{"qux":"qix"}')
 
       rumPublicApi.setGlobalContextProperty('foo', 'bar')
       expect(rumPublicApi.getGlobalContext()).toEqual({ qux: 'qix', foo: 'bar' })
-      expect(localStorage.getItem('_dd_c_rum_2')).toBe('{"qux":"qix","foo":"bar"}')
+      expect(localStorage.getItem('_oo_c_rum_2')).toBe('{"qux":"qix","foo":"bar"}')
 
       rumPublicApi.removeGlobalContextProperty('foo')
       expect(rumPublicApi.getGlobalContext()).toEqual({ qux: 'qix' })
-      expect(localStorage.getItem('_dd_c_rum_2')).toBe('{"qux":"qix"}')
+      expect(localStorage.getItem('_oo_c_rum_2')).toBe('{"qux":"qix"}')
 
       rumPublicApi.clearGlobalContext()
       expect(rumPublicApi.getGlobalContext()).toEqual({})
-      expect(localStorage.getItem('_dd_c_rum_2')).toBe('{}')
+      expect(localStorage.getItem('_oo_c_rum_2')).toBe('{}')
     })
 
     // TODO in next major, buffer context calls to correctly apply before init set/remove/clear
     it('when enabled, before init context values should override local storage values', () => {
-      localStorage.setItem('_dd_c_rum_1', '{"foo":"bar","qux":"qix"}')
-      localStorage.setItem('_dd_c_rum_2', '{"foo":"bar","qux":"qix"}')
+      localStorage.setItem('_oo_c_rum_1', '{"foo":"bar","qux":"qix"}')
+      localStorage.setItem('_oo_c_rum_2', '{"foo":"bar","qux":"qix"}')
       rumPublicApi.setUserProperty('foo', 'user')
       rumPublicApi.setGlobalContextProperty('foo', 'global')
 
@@ -1073,8 +1073,8 @@ describe('rum public api', () => {
 
       expect(rumPublicApi.getUser()).toEqual({ foo: 'user', qux: 'qix' })
       expect(rumPublicApi.getGlobalContext()).toEqual({ foo: 'global', qux: 'qix' })
-      expect(localStorage.getItem('_dd_c_rum_1')).toBe('{"foo":"user","qux":"qix"}')
-      expect(localStorage.getItem('_dd_c_rum_2')).toBe('{"foo":"global","qux":"qix"}')
+      expect(localStorage.getItem('_oo_c_rum_1')).toBe('{"foo":"user","qux":"qix"}')
+      expect(localStorage.getItem('_oo_c_rum_2')).toBe('{"foo":"global","qux":"qix"}')
     })
   })
 

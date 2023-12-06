@@ -1,5 +1,5 @@
-import type { RelativeTime } from '@datadog/browser-core'
-import { addEventListeners, DOM_EVENT } from '@datadog/browser-core'
+import type { RelativeTime } from '@openobserve/browser-core'
+import { addEventListeners, DOM_EVENT } from '@openobserve/browser-core'
 import type { RumConfiguration } from '../../configuration'
 
 export type FirstHidden = ReturnType<typeof trackFirstHidden>

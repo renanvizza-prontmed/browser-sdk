@@ -1,12 +1,12 @@
-import { DeflateEncoderStreamId, canUseEventBridge, noop, runOnReadyState } from '@datadog/browser-core'
+import { DeflateEncoderStreamId, canUseEventBridge, noop, runOnReadyState } from '@openobserve/browser-core'
 import type {
   LifeCycle,
   ViewContexts,
   RumSessionManager,
   RecorderApi,
   RumConfiguration,
-} from '@datadog/browser-rum-core'
-import { LifeCycleEventType } from '@datadog/browser-rum-core'
+} from '@openobserve/browser-rum-core'
+import { LifeCycleEventType } from '@openobserve/browser-rum-core'
 import { getReplayStats as getReplayStatsImpl } from '../domain/replayStats'
 import { getSessionReplayLink } from '../domain/getSessionReplayLink'
 import type { CreateDeflateWorker } from '../domain/deflate'

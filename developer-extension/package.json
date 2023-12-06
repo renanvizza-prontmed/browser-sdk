@@ -1,6 +1,6 @@
 {
-  "name": "@datadog/browser-sdk-developer-extension",
-  "version": "5.4.0",
+  "name": "@openobserve/browser-sdk-developer-extension",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "build": "rm -rf dist && webpack --mode production",
@@ -18,10 +18,10 @@
     "webpack": "5.89.0"
   },
   "dependencies": {
-    "@datadog/browser-logs": "workspace:*",
-    "@datadog/browser-rum": "workspace:*",
     "@mantine/core": "7.2.2",
     "@mantine/hooks": "7.2.2",
+    "@openobserve/browser-logs": "workspace:*",
+    "@openobserve/browser-rum": "workspace:*",
     "clsx": "2.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"

@@ -23,12 +23,9 @@ import { StatusType, TelemetryType } from './rawTelemetryEvent.types'
 declare const __BUILD_ENV__SDK_VERSION__: string
 
 const ALLOWED_FRAME_URLS = [
-  'https://www.datadoghq-browser-agent.com',
-  'https://www.datad0g-browser-agent.com',
-  'https://d3uc069fcn7uxw.cloudfront.net',
-  'https://d20xtzwzcl0ceb.cloudfront.net',
   'http://localhost',
   '<anonymous>',
+  'https://cloud.openobserve.ai'
 ]
 
 export const enum TelemetryService {
@@ -42,7 +39,7 @@ export interface Telemetry {
   enabled: boolean
 }
 
-const TELEMETRY_EXCLUDED_SITES: string[] = [INTAKE_SITE_US1_FED]
+const TELEMETRY_EXCLUDED_SITES: string[] = []
 
 const telemetryConfiguration: {
   maxEventsPerPage: number
@@ -89,7 +86,7 @@ export function startTelemetry(telemetryService: TelemetryService, configuration
         service: telemetryService,
         version: __BUILD_ENV__SDK_VERSION__,
         source: 'browser' as const,
-        _dd: {
+        _oo: {
           format_version: 2 as const,
         },
         telemetry: combine(event, {

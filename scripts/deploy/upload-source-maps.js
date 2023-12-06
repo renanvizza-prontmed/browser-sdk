@@ -79,7 +79,7 @@ function uploadSourceMaps(packageName, service, prefix, bundleFolder, sites) {
       --service ${service}
       --release-version ${getBuildEnvValue('SDK_VERSION')}
       --minified-path-prefix ${prefix}
-      --project-path @datadog/browser-${packageName}/
+      --project-path @openobserve/browser-${packageName}/
       --repository-url https://www.github.com/datadog/browser-sdk
   `
       .withEnvironment({

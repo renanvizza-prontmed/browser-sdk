@@ -1,7 +1,7 @@
-import type { TimeStamp } from '@datadog/browser-core'
-import { monitor, ONE_SECOND, display, removeStorageListeners } from '@datadog/browser-core'
-import type { Clock } from '@datadog/browser-core/test'
-import { deleteEventBridgeStub, initEventBridgeStub, mockClock } from '@datadog/browser-core/test'
+import type { TimeStamp } from '@openobserve/browser-core'
+import { monitor, ONE_SECOND, display, removeStorageListeners } from '@openobserve/browser-core'
+import type { Clock } from '@openobserve/browser-core/test'
+import { deleteEventBridgeStub, initEventBridgeStub, mockClock } from '@openobserve/browser-core/test'
 import type { HybridInitConfiguration, LogsInitConfiguration } from '../domain/configuration'
 import type { Logger, LogsMessage } from '../domain/logger'
 import { HandlerType, StatusType } from '../domain/logger'
@@ -498,11 +498,11 @@ describe('logs entry', () => {
 
       logsPublicApi.setGlobalContext({ foo: 'bar' })
       expect(logsPublicApi.getGlobalContext()).toEqual({ foo: 'bar' })
-      expect(localStorage.getItem('_dd_c_logs_2')).toBeNull()
+      expect(localStorage.getItem('_oo_c_logs_2')).toBeNull()
 
       logsPublicApi.setUser({ qux: 'qix' })
       expect(logsPublicApi.getUser()).toEqual({ qux: 'qix' })
-      expect(localStorage.getItem('_dd_c_logs_1')).toBeNull()
+      expect(localStorage.getItem('_oo_c_logs_1')).toBeNull()
     })
 
     it('when enabled, should maintain user context in local storage', () => {
@@ -510,19 +510,19 @@ describe('logs entry', () => {
 
       logsPublicApi.setUser({ qux: 'qix' })
       expect(logsPublicApi.getUser()).toEqual({ qux: 'qix' })
-      expect(localStorage.getItem('_dd_c_logs_1')).toBe('{"qux":"qix"}')
+      expect(localStorage.getItem('_oo_c_logs_1')).toBe('{"qux":"qix"}')
 
       logsPublicApi.setUserProperty('foo', 'bar')
       expect(logsPublicApi.getUser()).toEqual({ qux: 'qix', foo: 'bar' })
-      expect(localStorage.getItem('_dd_c_logs_1')).toBe('{"qux":"qix","foo":"bar"}')
+      expect(localStorage.getItem('_oo_c_logs_1')).toBe('{"qux":"qix","foo":"bar"}')
 
       logsPublicApi.removeUserProperty('foo')
       expect(logsPublicApi.getUser()).toEqual({ qux: 'qix' })
-      expect(localStorage.getItem('_dd_c_logs_1')).toBe('{"qux":"qix"}')
+      expect(localStorage.getItem('_oo_c_logs_1')).toBe('{"qux":"qix"}')
 
       logsPublicApi.clearUser()
       expect(logsPublicApi.getUser()).toEqual({})
-      expect(localStorage.getItem('_dd_c_logs_1')).toBe('{}')
+      expect(localStorage.getItem('_oo_c_logs_1')).toBe('{}')
     })
 
     it('when enabled, should maintain global context in local storage', () => {
@@ -530,25 +530,25 @@ describe('logs entry', () => {
 
       logsPublicApi.setGlobalContext({ qux: 'qix' })
       expect(logsPublicApi.getGlobalContext()).toEqual({ qux: 'qix' })
-      expect(localStorage.getItem('_dd_c_logs_2')).toBe('{"qux":"qix"}')
+      expect(localStorage.getItem('_oo_c_logs_2')).toBe('{"qux":"qix"}')
 
       logsPublicApi.setGlobalContextProperty('foo', 'bar')
       expect(logsPublicApi.getGlobalContext()).toEqual({ qux: 'qix', foo: 'bar' })
-      expect(localStorage.getItem('_dd_c_logs_2')).toBe('{"qux":"qix","foo":"bar"}')
+      expect(localStorage.getItem('_oo_c_logs_2')).toBe('{"qux":"qix","foo":"bar"}')
 
       logsPublicApi.removeGlobalContextProperty('foo')
       expect(logsPublicApi.getGlobalContext()).toEqual({ qux: 'qix' })
-      expect(localStorage.getItem('_dd_c_logs_2')).toBe('{"qux":"qix"}')
+      expect(localStorage.getItem('_oo_c_logs_2')).toBe('{"qux":"qix"}')
 
       logsPublicApi.clearGlobalContext()
       expect(logsPublicApi.getGlobalContext()).toEqual({})
-      expect(localStorage.getItem('_dd_c_logs_2')).toBe('{}')
+      expect(localStorage.getItem('_oo_c_logs_2')).toBe('{}')
     })
 
     // TODO in next major, buffer context calls to correctly apply before init set/remove/clear
     it('when enabled, before init context values should override local storage values', () => {
-      localStorage.setItem('_dd_c_logs_1', '{"foo":"bar","qux":"qix"}')
-      localStorage.setItem('_dd_c_logs_2', '{"foo":"bar","qux":"qix"}')
+      localStorage.setItem('_oo_c_logs_1', '{"foo":"bar","qux":"qix"}')
+      localStorage.setItem('_oo_c_logs_2', '{"foo":"bar","qux":"qix"}')
       logsPublicApi.setUserProperty('foo', 'user')
       logsPublicApi.setGlobalContextProperty('foo', 'global')
 
@@ -556,8 +556,8 @@ describe('logs entry', () => {
 
       expect(logsPublicApi.getUser()).toEqual({ foo: 'user', qux: 'qix' })
       expect(logsPublicApi.getGlobalContext()).toEqual({ foo: 'global', qux: 'qix' })
-      expect(localStorage.getItem('_dd_c_logs_1')).toBe('{"foo":"user","qux":"qix"}')
-      expect(localStorage.getItem('_dd_c_logs_2')).toBe('{"foo":"global","qux":"qix"}')
+      expect(localStorage.getItem('_oo_c_logs_1')).toBe('{"foo":"user","qux":"qix"}')
+      expect(localStorage.getItem('_oo_c_logs_2')).toBe('{"foo":"global","qux":"qix"}')
     })
   })
 })

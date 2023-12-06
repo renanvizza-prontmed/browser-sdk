@@ -4,8 +4,8 @@ import connectBusboy from 'connect-busboy'
 import express from 'express'
 
 import cors from 'cors'
-import type { BrowserSegmentMetadataAndSegmentSizes } from '@datadog/browser-rum/src/domain/segmentCollection'
-import type { BrowserSegment } from '@datadog/browser-rum/src/types'
+import type { BrowserSegmentMetadataAndSegmentSizes } from '@openobserve/browser-rum/src/domain/segmentCollection'
+import type { BrowserSegment } from '@openobserve/browser-rum/src/types'
 import type {
   IntakeRegistry,
   IntakeRequest,
@@ -45,13 +45,13 @@ export function createIntakeServerApp(intakeRegistry: IntakeRegistry) {
 }
 
 function computeIntakeRequestInfos(req: express.Request): IntakeRequestInfos {
-  const ddforward = req.query.ddforward as string | undefined
-  if (!ddforward) {
-    throw new Error('ddforward is missing')
+  const ooforward = req.query.ooforward as string | undefined
+  if (!ooforward) {
+    throw new Error('ooforward is missing')
   }
-  const { pathname, searchParams } = new URL(ddforward, 'https://example.org')
+  const { pathname, searchParams } = new URL(ooforward, 'https://example.org')
 
-  const encoding = req.headers['content-encoding'] || searchParams.get('dd-evp-encoding')
+  const encoding = req.headers['content-encoding'] || searchParams.get('oo-evp-encoding')
 
   if (req.query.bridge === 'true') {
     const eventType = req.query.event_type
@@ -143,9 +143,9 @@ function readReplayIntakeRequest(
 
 function forwardIntakeRequestToDatadog(req: express.Request): Promise<any> {
   return new Promise((resolve, reject) => {
-    const ddforward = req.query.ddforward! as string
-    if (!/^\/api\/v2\//.test(ddforward)) {
-      throw new Error(`Unsupported ddforward: ${ddforward}`)
+    const ooforward = req.query.ooforward! as string
+    if (!/^\/api\/v2\//.test(ooforward)) {
+      throw new Error(`Unsupported ooforward: ${ooforward}`)
     }
     const options = {
       method: 'POST',
@@ -155,7 +155,7 @@ function forwardIntakeRequestToDatadog(req: express.Request): Promise<any> {
         'User-Agent': req.headers['user-agent'],
       },
     }
-    const datadogIntakeRequest = https.request(new URL(ddforward, 'https://browser-intake-datadoghq.com'), options)
+    const datadogIntakeRequest = https.request(new URL(ooforward, 'https://api.openobserve.ai'), options)
     req.pipe(datadogIntakeRequest)
     datadogIntakeRequest.on('response', resolve)
     datadogIntakeRequest.on('error', reject)

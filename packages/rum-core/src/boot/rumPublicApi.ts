@@ -7,7 +7,7 @@ import type {
   DeflateWorker,
   DeflateEncoderStreamId,
   DeflateEncoder,
-} from '@datadog/browser-core'
+} from '@openobserve/browser-core'
 import {
   noop,
   CustomerDataType,
@@ -30,7 +30,7 @@ import {
   createStoredContextManager,
   combine,
   createIdentityEncoder,
-} from '@datadog/browser-core'
+} from '@openobserve/browser-core'
 import type { LifeCycle } from '../domain/lifeCycle'
 import type { ViewContexts } from '../domain/contexts/viewContexts'
 import type { RumSessionManager } from '../domain/rumSessionManager'
@@ -338,7 +338,7 @@ export function makeRumPublicApi(
   function canInitRum(initConfiguration: RumInitConfiguration) {
     if (isAlreadyInitialized) {
       if (!initConfiguration.silentMultipleInit) {
-        display.error('DD_RUM is already initialized.')
+        display.error('OO_RUM is already initialized.')
       }
       return false
     }

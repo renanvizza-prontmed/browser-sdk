@@ -1,11 +1,11 @@
-import type { ClocksState, RelativeTime } from '@datadog/browser-core'
-import { ErrorSource, ONE_MINUTE, display } from '@datadog/browser-core'
+import type { ClocksState, RelativeTime } from '@openobserve/browser-core'
+import { ErrorSource, ONE_MINUTE, display } from '@openobserve/browser-core'
 import {
   initEventBridgeStub,
   deleteEventBridgeStub,
   cleanupSyntheticsWorkerValues,
   mockSyntheticsWorkerValues,
-} from '@datadog/browser-core/test'
+} from '@openobserve/browser-core/test'
 import type { TestSetupBuilder } from '../../test'
 import {
   createRumSessionManagerMock,
@@ -714,7 +714,7 @@ describe('rum assembly', () => {
       notifyRawRumEvent(lifeCycle, {
         rawRumEvent: createRawRumEvent(RumEventType.ACTION),
       })
-      expect(serverRumEvents[0]._dd.configuration).toEqual({
+      expect(serverRumEvents[0]._oo.configuration).toEqual({
         session_replay_sample_rate: 0,
         session_sample_rate: 100,
       })
@@ -730,7 +730,7 @@ describe('rum assembly', () => {
       notifyRawRumEvent(lifeCycle, {
         rawRumEvent: createRawRumEvent(RumEventType.ACTION),
       })
-      expect(serverRumEvents[0]._dd.configuration).toEqual({
+      expect(serverRumEvents[0]._oo.configuration).toEqual({
         session_sample_rate: 1.234,
         session_replay_sample_rate: 6.789,
       })
@@ -759,8 +759,8 @@ describe('rum assembly', () => {
 
       notifyRawRumEvent(lifeCycle, { rawRumEvent: createRawRumEvent(RumEventType.VIEW) })
 
-      expect(serverRumEvents[0]._dd.browser_sdk_version).not.toBeDefined()
-      expect(serverRumEvents[1]._dd.browser_sdk_version).toBeDefined()
+      expect(serverRumEvents[0]._oo.browser_sdk_version).not.toBeDefined()
+      expect(serverRumEvents[1]._oo.browser_sdk_version).toBeDefined()
     })
   })
 

@@ -39,22 +39,26 @@ function createEndpointUrlWithParametersBuilder(
   initConfiguration: InitConfiguration,
   trackType: TrackType
 ): (parameters: string) => string {
-  const path = `/api/v2/${trackType}`
-  const proxy = initConfiguration.proxy
+  const { proxy, apiVersion, organizationIdentifier, insecureHTTP } = initConfiguration
+  //const path = `/api/v2/${trackType}`
+  const path = `/rum/${apiVersion ?? 'v2'}/${organizationIdentifier}/${trackType}`
   if (typeof proxy === 'string') {
     const normalizedProxyUrl = normalizeUrl(proxy)
-    return (parameters) => `${normalizedProxyUrl}?ddforward=${encodeURIComponent(`${path}?${parameters}`)}`
+    return (parameters) => `${normalizedProxyUrl}?ooforward=${encodeURIComponent(`${path}?${parameters}`)}`
   }
   if (typeof proxy === 'function') {
     return (parameters) => proxy({ path, parameters })
   }
   const host = buildEndpointHost(initConfiguration)
-  return (parameters) => `https://${host}${path}?${parameters}`
+  const protocol = insecureHTTP ? 'http' : 'https'
+
+  return (parameters) => `${protocol}://${host}${path}?${parameters}`
 }
 
 function buildEndpointHost(initConfiguration: InitConfiguration) {
   const { site = INTAKE_SITE_US1, internalAnalyticsSubdomain } = initConfiguration
 
+  return site
   if (internalAnalyticsSubdomain && site === INTAKE_SITE_US1) {
     return `${internalAnalyticsSubdomain}.${INTAKE_SITE_US1}`
   }
@@ -84,16 +88,16 @@ function buildEndpointParameters(
   }
 
   const parameters = [
-    'ddsource=browser',
-    `ddtags=${encodeURIComponent(tags.join(','))}`,
-    `dd-api-key=${clientToken}`,
-    `dd-evp-origin-version=${encodeURIComponent(__BUILD_ENV__SDK_VERSION__)}`,
-    'dd-evp-origin=browser',
-    `dd-request-id=${generateUUID()}`,
+    'o2source=browser',
+    `o2tags=${encodeURIComponent(tags.join(','))}`,
+    `o2-api-key=${clientToken}`,
+    `o2-evp-origin-version=${encodeURIComponent(__BUILD_ENV__SDK_VERSION__)}`,
+    'o2-evp-origin=browser',
+    `o2-request-id=${generateUUID()}`,
   ]
 
   if (encoding) {
-    parameters.push(`dd-evp-encoding=${encoding}`)
+    parameters.push(`oo-evp-encoding=${encoding}`)
   }
 
   if (trackType === 'rum') {

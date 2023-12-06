@@ -106,7 +106,7 @@ export type RumActionEvent = CommonProperties & {
   /**
    * Internal properties
    */
-  _dd?: {
+  _oo?: {
     /**
      * Action properties
      */
@@ -324,7 +324,7 @@ export type RumLongTaskEvent = CommonProperties &
     /**
      * Internal properties
      */
-    readonly _dd?: {
+    readonly _oo?: {
       /**
        * Whether the long task should be discarded or indexed
        */
@@ -528,7 +528,7 @@ export type RumResourceEvent = CommonProperties &
     /**
      * Internal properties
      */
-    readonly _dd?: {
+    readonly _oo?: {
       /**
        * span identifier in decimal format
        */
@@ -819,7 +819,7 @@ export type RumViewEvent = CommonProperties & {
   /**
    * Internal properties
    */
-  readonly _dd: {
+  readonly _oo: {
     /**
      * Version of the update of the view event
      */
@@ -1128,7 +1128,7 @@ export interface CommonProperties {
   /**
    * Internal properties
    */
-  readonly _dd: {
+  readonly _oo: {
     /**
      * Version of the RUM event format
      */

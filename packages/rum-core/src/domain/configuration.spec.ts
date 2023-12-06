@@ -1,4 +1,4 @@
-import { DefaultPrivacyLevel, display } from '@datadog/browser-core'
+import { DefaultPrivacyLevel, display } from '@openobserve/browser-core'
 import type { RumInitConfiguration } from './configuration'
 import { DEFAULT_PROPAGATOR_TYPES, serializeRumConfiguration, validateAndBuildRumConfiguration } from './configuration'
 

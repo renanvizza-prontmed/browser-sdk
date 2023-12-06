@@ -1,4 +1,4 @@
-import type { Context, TelemetryEvent, RawError, Observable, PageExitEvent } from '@datadog/browser-core'
+import type { Context, TelemetryEvent, RawError, Observable, PageExitEvent } from '@openobserve/browser-core'
 import {
   sendToExtension,
   createPageExitObservable,
@@ -13,7 +13,7 @@ import {
   addTelemetryConfiguration,
   addTelemetryDebug,
   createIdentityEncoder,
-} from '@datadog/browser-core'
+} from '@openobserve/browser-core'
 import { startLogsSessionManager, startLogsSessionManagerStub } from '../domain/logsSessionManager'
 import type { LogsConfiguration, LogsInitConfiguration } from '../domain/configuration'
 import { serializeLogsConfiguration } from '../domain/configuration'

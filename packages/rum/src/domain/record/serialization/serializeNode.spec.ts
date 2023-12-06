@@ -4,10 +4,10 @@ import {
   isIE,
   noop,
   resetExperimentalFeatures,
-} from '@datadog/browser-core'
+} from '@openobserve/browser-core'
 
-import type { RumConfiguration } from '@datadog/browser-rum-core'
-import { isAdoptedStyleSheetsSupported } from '@datadog/browser-core/test'
+import type { RumConfiguration } from '@openobserve/browser-rum-core'
+import { isAdoptedStyleSheetsSupported } from '@openobserve/browser-core/test'
 import {
   NodePrivacyLevel,
   PRIVACY_ATTR_NAME,
@@ -428,7 +428,7 @@ describe('serializeNodeWithId', () => {
         expect(serializeElement(radio)!.attributes).toEqual({
           type: 'radio',
           value: '***',
-          'data-dd-privacy': 'mask-user-input',
+          'data-oo-privacy': 'mask-user-input',
         })
 
         radio.checked = true
@@ -436,7 +436,7 @@ describe('serializeNodeWithId', () => {
         expect(serializeElement(radio)!.attributes).toEqual({
           type: 'radio',
           value: '***',
-          'data-dd-privacy': 'mask-user-input',
+          'data-oo-privacy': 'mask-user-input',
         })
       })
     })

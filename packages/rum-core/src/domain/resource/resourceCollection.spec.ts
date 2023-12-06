@@ -1,4 +1,4 @@
-import type { Duration, RelativeTime, ServerDuration, TimeStamp } from '@datadog/browser-core'
+import type { Duration, RelativeTime, ServerDuration, TimeStamp } from '@openobserve/browser-core'
 import {
   resetExperimentalFeatures,
   addExperimentalFeatures,
@@ -6,7 +6,7 @@ import {
   RequestType,
   ResourceType,
   ExperimentalFeature,
-} from '@datadog/browser-core'
+} from '@openobserve/browser-core'
 import type { RumFetchResourceEventDomainContext } from '../../domainContext.types'
 import { setup, createRumSessionManagerMock, createPerformanceEntry } from '../../../test'
 import type { TestSetupBuilder } from '../../../test'
@@ -57,7 +57,7 @@ describe('resourceCollection', () => {
         first_byte: jasmine.any(Object),
       },
       type: RumEventType.RESOURCE,
-      _dd: {
+      _oo: {
         discarded: false,
       },
     })
@@ -94,7 +94,7 @@ describe('resourceCollection', () => {
         url: 'https://resource.com/valid',
       },
       type: RumEventType.RESOURCE,
-      _dd: {
+      _oo: {
         discarded: false,
       },
     })
@@ -160,7 +160,7 @@ describe('resourceCollection', () => {
           ])
 
           expect(rawRumEvents.length).toBe(1)
-          expect((rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._dd.discarded).toBeTrue()
+          expect((rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._oo.discarded).toBeTrue()
         })
 
         it('should collect a resource from a completed XHR request', () => {
@@ -176,7 +176,7 @@ describe('resourceCollection', () => {
           )
 
           expect(rawRumEvents.length).toBe(1)
-          expect((rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._dd.discarded).toBeTrue()
+          expect((rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._oo.discarded).toBeTrue()
         })
       })
     })
@@ -202,8 +202,8 @@ describe('resourceCollection', () => {
       mockPerformanceEntry.startTime,
       mockPerformanceEntry.duration,
     ])
-    expect(rawRumResourceEventFetch._dd.page_states).toEqual(jasmine.objectContaining(mockPageStates))
-    expect(rawRumResourceEventEntry._dd.page_states).toEqual(jasmine.objectContaining(mockPageStates))
+    expect(rawRumResourceEventFetch._oo.page_states).toEqual(jasmine.objectContaining(mockPageStates))
+    expect(rawRumResourceEventEntry._oo.page_states).toEqual(jasmine.objectContaining(mockPageStates))
   })
 
   it('should not have a duration if a frozen state happens during the request and no performance entry matches', () => {
@@ -233,8 +233,8 @@ describe('resourceCollection', () => {
     const rawRumResourceEventFetch = rawRumEvents[0].rawRumEvent as RawRumResourceEvent
     const rawRumResourceEventEntry = rawRumEvents[1].rawRumEvent as RawRumResourceEvent
 
-    expect(rawRumResourceEventFetch._dd.page_states).not.toBeDefined()
-    expect(rawRumResourceEventEntry._dd.page_states).not.toBeDefined()
+    expect(rawRumResourceEventFetch._oo.page_states).not.toBeDefined()
+    expect(rawRumResourceEventEntry._oo.page_states).not.toBeDefined()
   })
 
   it('should create resource from completed fetch request', () => {
@@ -270,7 +270,7 @@ describe('resourceCollection', () => {
         url: 'https://resource.com/valid',
       },
       type: RumEventType.RESOURCE,
-      _dd: {
+      _oo: {
         discarded: false,
       },
     })
@@ -322,7 +322,7 @@ describe('resourceCollection', () => {
       lifeCycle.notify(LifeCycleEventType.PERFORMANCE_ENTRIES_COLLECTED, [
         createPerformanceEntry(RumPerformanceEntryType.RESOURCE, { traceId: '1234' }),
       ])
-      const privateFields = (rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._dd
+      const privateFields = (rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._oo
       expect(privateFields).toBeDefined()
       expect(privateFields.trace_id).toBe('1234')
     })
@@ -337,7 +337,7 @@ describe('resourceCollection', () => {
           traceId: new TraceIdentifier(),
         })
       )
-      const privateFields = (rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._dd
+      const privateFields = (rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._oo
       expect(privateFields.trace_id).toBeDefined()
       expect(privateFields.span_id).toBeDefined()
     })
@@ -352,7 +352,7 @@ describe('resourceCollection', () => {
           traceId: new TraceIdentifier(),
         })
       )
-      const privateFields = (rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._dd
+      const privateFields = (rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._oo
       expect(privateFields.trace_id).not.toBeDefined()
       expect(privateFields.span_id).not.toBeDefined()
     })
@@ -380,7 +380,7 @@ describe('resourceCollection', () => {
           traceId: new TraceIdentifier(),
         })
       )
-      const privateFields = (rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._dd
+      const privateFields = (rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._oo
       expect(privateFields.rule_psr).toEqual(0.6)
     })
 
@@ -406,7 +406,7 @@ describe('resourceCollection', () => {
           traceId: new TraceIdentifier(),
         })
       )
-      const privateFields = (rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._dd
+      const privateFields = (rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._oo
       expect(privateFields.rule_psr).toBeUndefined()
     })
 
@@ -433,7 +433,7 @@ describe('resourceCollection', () => {
           traceId: new TraceIdentifier(),
         })
       )
-      const privateFields = (rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._dd
+      const privateFields = (rawRumEvents[0].rawRumEvent as RawRumResourceEvent)._oo
       expect(privateFields.rule_psr).toEqual(0)
     })
   })

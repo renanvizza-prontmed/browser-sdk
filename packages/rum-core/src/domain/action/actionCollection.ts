@@ -1,5 +1,5 @@
-import type { ClocksState, Context, Observable } from '@datadog/browser-core'
-import { noop, assign, combine, toServerDuration, generateUUID } from '@datadog/browser-core'
+import type { ClocksState, Context, Observable } from '@openobserve/browser-core'
+import { noop, assign, combine, toServerDuration, generateUUID } from '@openobserve/browser-core'
 
 import type { RawRumActionEvent } from '../../rawRumEvent.types'
 import { ActionType, RumEventType } from '../../rawRumEvent.types'
@@ -75,7 +75,7 @@ function processAction(
             count: action.counts.resourceCount,
           },
         },
-        _dd: {
+        _oo: {
           action: {
             target: action.target,
             position: action.position,

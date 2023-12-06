@@ -59,8 +59,8 @@ describe('tracing', () => {
   // By default, we send both Datadog and W3C tracecontext headers
   function checkRequestHeaders(rawHeaders: string) {
     const headers: { [key: string]: string } = JSON.parse(rawHeaders)
-    expect(headers['x-datadog-trace-id']).toMatch(/\d+/)
-    expect(headers['x-datadog-origin']).toBe('rum')
+    expect(headers['x-openobserve-trace-id']).toMatch(/\d+/)
+    expect(headers['x-openobserve-origin']).toBe('rum')
     expect(headers['traceparent']).toMatch(/^[0-9a-f]{2}-[0-9a-f]{32}-[0-9a-f]{16}-01$/)
     expect(headers['x-foo']).toBe('bar, baz')
   }
@@ -70,8 +70,8 @@ describe('tracing', () => {
       (event) => event.resource.type === 'xhr' || event.resource.type === 'fetch'
     )
     expect(requests.length).toBe(1)
-    expect(requests[0]._dd.trace_id).toMatch(/\d+/)
-    expect(requests[0]._dd.span_id).toMatch(/\d+/)
+    expect(requests[0]._oo.trace_id).toMatch(/\d+/)
+    expect(requests[0]._oo.span_id).toMatch(/\d+/)
     expect(requests[0].resource.id).toBeDefined()
   }
 })

@@ -1,6 +1,6 @@
-import type { LogsInitConfiguration } from '@datadog/browser-logs'
-import type { RumInitConfiguration } from '@datadog/browser-rum-core'
-import { DefaultPrivacyLevel } from '@datadog/browser-rum'
+import type { LogsInitConfiguration } from '@openobserve/browser-logs'
+import type { RumInitConfiguration } from '@openobserve/browser-rum-core'
+import { DefaultPrivacyLevel } from '@openobserve/browser-rum'
 import { getRunId } from '../../../envUtils'
 import { deleteAllCookies, getBrowserName, withBrowserLogs } from '../helpers/browser'
 import { APPLICATION_ID, CLIENT_TOKEN } from '../helpers/constants'
@@ -141,11 +141,11 @@ class TestBuilder {
   }
 
   private rumInit: (configuration: RumInitConfiguration) => void = (configuration) => {
-    window.DD_RUM!.init(configuration)
+    window.OO_RUM!.init(configuration)
   }
 
   private logsInit: (configuration: LogsInitConfiguration) => void = (configuration) => {
-    window.DD_LOGS!.init(configuration)
+    window.OO_LOGS!.init(configuration)
   }
 }
 

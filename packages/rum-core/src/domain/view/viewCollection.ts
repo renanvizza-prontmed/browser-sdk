@@ -1,5 +1,5 @@
-import type { Duration, ServerDuration, Observable } from '@datadog/browser-core'
-import { isEmptyObject, mapValues, toServerDuration, isNumber } from '@datadog/browser-core'
+import type { Duration, ServerDuration, Observable } from '@openobserve/browser-core'
+import { isEmptyObject, mapValues, toServerDuration, isNumber } from '@openobserve/browser-core'
 import type { RecorderApi } from '../../boot/rumPublicApi'
 import type { RawRumViewEvent } from '../../rawRumEvent.types'
 import { RumEventType } from '../../rawRumEvent.types'
@@ -51,7 +51,7 @@ function processViewUpdate(
   const featureFlagContext = featureFlagContexts.findFeatureFlagEvaluations(view.startClocks.relative)
   const pageStates = pageStateHistory.findAll(view.startClocks.relative, view.duration)
   const viewEvent: RawRumViewEvent = {
-    _dd: {
+    _oo: {
       document_version: view.documentVersion,
       replay_stats: replayStats,
       page_states: pageStates,

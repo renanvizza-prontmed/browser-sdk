@@ -1,5 +1,5 @@
-import type { RelativeTime, TimeStamp, ErrorWithCause } from '@datadog/browser-core'
-import { ErrorHandling, ErrorSource, NO_ERROR_STACK_PRESENT_MESSAGE } from '@datadog/browser-core'
+import type { RelativeTime, TimeStamp, ErrorWithCause } from '@openobserve/browser-core'
+import { ErrorHandling, ErrorSource, NO_ERROR_STACK_PRESENT_MESSAGE } from '@openobserve/browser-core'
 import type { TestSetupBuilder } from '../../../test'
 import { setup } from '../../../test'
 import type { RawRumErrorEvent } from '../../rawRumEvent.types'
