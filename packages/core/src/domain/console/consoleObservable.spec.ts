@@ -113,10 +113,10 @@ describe('console error observable', () => {
 
   it('should retrieve fingerprint from error', () => {
     interface DatadogError extends Error {
-      dd_fingerprint?: string
+      oo_fingerprint?: string
     }
     const error = new Error('foo')
-    ;(error as DatadogError).dd_fingerprint = 'my-fingerprint'
+    ;(error as DatadogError).oo_fingerprint = 'my-fingerprint'
 
     // eslint-disable-next-line no-console
     console.error(error)
@@ -127,7 +127,7 @@ describe('console error observable', () => {
 
   it('should sanitize error fingerprint', () => {
     const error = new Error('foo')
-    ;(error as any).dd_fingerprint = 2
+    ;(error as any).oo_fingerprint = 2
 
     // eslint-disable-next-line no-console
     console.error(error)
