@@ -160,7 +160,7 @@ export function validateAndBuildConfiguration(initConfiguration: InitConfigurati
        */
       batchMessagesLimit: 50,
       messageBytesLimit: 256 * ONE_KIBI_BYTE,
-      apiVersion: initConfiguration.apiVersion ?? 'v2',
+      apiVersion: initConfiguration.apiVersion ?? 'v1',
       organizationIdentifier: initConfiguration.organizationIdentifier ?? 'default',
       insecureHTTP: initConfiguration.insecureHTTP ?? false,
     },

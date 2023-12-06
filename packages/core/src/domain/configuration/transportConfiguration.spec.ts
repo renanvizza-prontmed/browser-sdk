@@ -83,9 +83,9 @@ describe('transportConfiguration', () => {
       it(`should detect intake request for ${site} site`, () => {
         const configuration = computeTransportConfiguration({ clientToken, site, organizationIdentifier: 'xyz'})
 
-        expect(configuration.isIntakeUrl(`https://${intakeDomain}/rum/v2/xyz/rum?xxx`)).toBe(true)
-        expect(configuration.isIntakeUrl(`https://${intakeDomain}/rum/v2/xyz/logs?xxx`)).toBe(true)
-        expect(configuration.isIntakeUrl(`https://${intakeDomain}/rum/v2/xyz/replay?xxx`)).toBe(true)
+        expect(configuration.isIntakeUrl(`https://${intakeDomain}/rum/v1/xyz/rum?xxx`)).toBe(true)
+        expect(configuration.isIntakeUrl(`https://${intakeDomain}/rum/v1/xyz/logs?xxx`)).toBe(true)
+        expect(configuration.isIntakeUrl(`https://${intakeDomain}/rum/v1/xyz/replay?xxx`)).toBe(true)
       })
     })
 
@@ -95,7 +95,7 @@ describe('transportConfiguration', () => {
         internalAnalyticsSubdomain,
         organizationIdentifier: 'xyz'
       })
-      expect(configuration.isIntakeUrl(`https://api.openobserve.ai/rum/v2/xyz/rum?xxx`)).toBe(true)
+      expect(configuration.isIntakeUrl(`https://api.openobserve.ai/rum/v1/xyz/rum?xxx`)).toBe(true)
     })
 
     it('should not detect non intake request', () => {
@@ -112,7 +112,7 @@ describe('transportConfiguration', () => {
           organizationIdentifier: 'xyz'
         })
         expect(
-          configuration.isIntakeUrl(`https://www.proxy.com/?ooforward=${encodeURIComponent('/rum/v2/xyz/rum?foo=bar')}`)
+          configuration.isIntakeUrl(`https://www.proxy.com/?ooforward=${encodeURIComponent('/rum/v1/xyz/rum?foo=bar')}`)
         ).toBe(true)
 
         configuration = computeTransportConfiguration({
@@ -122,7 +122,7 @@ describe('transportConfiguration', () => {
         })
         expect(
           configuration.isIntakeUrl(
-            `https://www.proxy.com/custom/path?ooforward=${encodeURIComponent('/rum/v2/xyz/rum?foo=bar')}`
+            `https://www.proxy.com/custom/path?ooforward=${encodeURIComponent('/rum/v1/xyz/rum?foo=bar')}`
           )
         ).toBe(true)
       })
@@ -147,7 +147,7 @@ describe('transportConfiguration', () => {
           organizationIdentifier: 'xyz'
         })
 
-        expect(configuration.isIntakeUrl(`https://api.openobserve.ai/rum/v2/xyz/rum?xxx`)).toBe(
+        expect(configuration.isIntakeUrl(`https://api.openobserve.ai/rum/v1/xyz/rum?xxx`)).toBe(
             true
           )
       })

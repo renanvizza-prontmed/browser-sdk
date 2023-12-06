@@ -199,7 +199,7 @@ function setupEventBridge(servers: Servers) {
   // needs to be similar to the normal Datadog intake (through proxy) to make the SDK completely
   // ignore them.
   const eventBridgeIntake = `${servers.intake.url}/?${new URLSearchParams({
-    ooforward: '/api/v2/rum?',
+    ooforward: '/api/v1/rum?',
     bridge: 'true',
   }).toString()}`
 

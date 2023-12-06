@@ -279,7 +279,7 @@ describe('httpRequest intake parameters', () => {
     request.send({ data: '{"foo":"bar1"}\n{"foo":"bar2"}', bytesCount: 10 })
     request.send({ data: '{"foo":"bar1"}\n{"foo":"bar2"}', bytesCount: 10 })
 
-    const search = /o2-request-id=([^&]*)/
+    const search = /oo-request-id=([^&]*)/
     const requestId1 = search.exec(requests[0].url)?.[1]
     const requestId2 = search.exec(requests[1].url)?.[1]
 
